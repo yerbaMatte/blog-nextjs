@@ -38,6 +38,7 @@ export default function ThemeSwitcher() {
           maxWidth: "24px",
         }}
         onClick={() => onModeIconChange()}
+        loading="lazy"
       />
     </div>
   );
