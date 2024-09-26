@@ -5,7 +5,6 @@ import { Inter } from "next/font/google";
 import Providers from "./providers";
 import "./globals.css";
 
-// footer lazy loading
 const Footer = dynamic(() => import("./components/layout/Footer"));
 import Header from "./components/layout/Header/Header";
 

@@ -1,3 +1,6 @@
-.header_layout {
-  @apply py-6;
+.svg_icon {
+  @apply hidden;
+  @media (min-width: 340px) {
+    display: block;
+  }
 }
