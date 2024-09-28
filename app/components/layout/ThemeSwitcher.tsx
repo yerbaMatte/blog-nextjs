@@ -39,6 +39,7 @@ export default function ThemeSwitcher() {
         }}
         onClick={() => onModeIconChange()}
         loading="lazy"
+        unoptimized
       />
     </div>
   );

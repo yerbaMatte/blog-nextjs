@@ -11,14 +11,14 @@ import {
   Link as NextUILink,
 } from "@nextui-org/react";
 
-import styles from "./Header.module.scss";
 import Link from "next/link";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { useTheme } from "next-themes";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import styles from "./Header.module.scss";
 
-export default function Header() {
+export default function Header({ children }: { children: JSX.Element }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
   const pathname = usePathname().substring(1);
@@ -36,10 +36,11 @@ export default function Header() {
   return (
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
+      disableAnimation
       className={styles.header_layout}
-      height="6rem"
+      height="8rem"
       classNames={{
-        wrapper: "px-2 my-4 md:px-6",
+        wrapper: "px-2 md:px-6",
         item: [
           "relative",
           "data-[active=true]:before:w-full",
@@ -58,6 +59,7 @@ export default function Header() {
           "before:duration-600",
           "before:ease-in-out",
         ],
+        menuItem: ["text-center", "py-2"],
       }}
     >
       <NavbarContent justify="start">
@@ -72,11 +74,11 @@ export default function Header() {
                 alt="yerba mate drink"
                 width={48}
                 height={48}
+                unoptimized
                 style={{
                   filter: "invert(100%)",
                   marginRight: "0.25rem",
                 }}
-                loading="lazy"
               />
             </Link>
             <div className="flex flex-col">
@@ -117,16 +119,19 @@ export default function Header() {
             </NextUILink>
           </NavbarItem>
         ))}
-        <NavbarItem key={123}>
-          <NextUILink showAnchorIcon color="foreground" as={Link} href="#">
+        <NavbarItem key={"resume"} className={styles.no_hover_effects}>
+          <NextUILink color="foreground" isExternal showAnchorIcon href="#">
             Resume
           </NextUILink>
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end" className="gap-x-2 ml-1 md:gap-x-4">
-        <li>
-          <Link href="https://www.linkedin.com/in/milosz-lewandowskii/">
+        <li className="h-6">
+          <NextUILink
+            isExternal
+            href="https://www.linkedin.com/in/milosz-lewandowskii/"
+          >
             <Image
               ref={(el) => {
                 imageRefs.current[1] = el;
@@ -135,18 +140,17 @@ export default function Header() {
               alt="linkedin profile"
               width={24}
               height={24}
+              unoptimized
               style={{
                 filter: "invert(100%)",
                 maxWidth: "24px",
               }}
               className={styles.svg_icon}
-              loading="lazy"
             />
-          </Link>
+          </NextUILink>
         </li>
-        <li>
-          {" "}
-          <Link href="https://www.github.com/yerbaMatte">
+        <li className="h-6">
+          <NextUILink isExternal href="https://www.github.com/yerbaMatte">
             <Image
               ref={(el) => {
                 imageRefs.current[2] = el;
@@ -159,10 +163,10 @@ export default function Header() {
                 filter: "invert(100%)",
                 maxWidth: "24px",
               }}
+              unoptimized
               className={styles.svg_icon}
-              loading="lazy"
             />
-          </Link>
+          </NextUILink>
         </li>
         <li>
           <ThemeSwitcher />
@@ -172,14 +176,33 @@ export default function Header() {
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         className="sm:hidden mr-2"
       />
-      <NavbarMenu>
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <NextUILink color="foreground" className="w-full" href="#">
-              {item}
+      <NavbarMenu className="items-center justify-between">
+        <ul className="w-full">
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item}-${index}`}>
+              <NextUILink
+                className="text-2xl"
+                color="foreground"
+                as={Link}
+                href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              >
+                {item}
+              </NextUILink>
+            </NavbarMenuItem>
+          ))}
+          <NavbarMenuItem key={"resume"}>
+            <NextUILink
+              color="foreground"
+              isExternal
+              showAnchorIcon
+              href="#"
+              className="text-2xl"
+            >
+              Resume
             </NextUILink>
           </NavbarMenuItem>
-        ))}
+        </ul>
+        <li>{children}</li>
       </NavbarMenu>
     </Navbar>
   );
