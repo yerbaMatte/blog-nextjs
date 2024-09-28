@@ -5,14 +5,9 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  @apply h-full;
 }
 
-.layout-container {
-  @apply flex flex-col;
-  @apply min-h-screen;
-}
-
-.content {
-  @apply grow;
+[data-theme="dark"] [data-hide-on-theme="dark"],
+[data-theme="light"] [data-hide-on-theme="light"] {
+  display: none;
 }

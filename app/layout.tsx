@@ -27,11 +27,11 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en" className={inter.className}>
       <body>
         <Providers>
-          <main className="layout-container">
+          <main className="flex flex-col min-h-screen">
             <Header>
               <Footer />
             </Header>
-            <section className="content">{children}</section>
+            <section className="grow">{children}</section>
             <Footer />
           </main>
         </Providers>
