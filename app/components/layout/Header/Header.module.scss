@@ -1,6 +1,11 @@
+.no_hover_effects {
+  &:hover::before {
+    content: none !important;
+  }
+}
 .svg_icon {
   @apply hidden;
-  @media (min-width: 340px) {
+  @media (min-width: 330px) {
     display: block;
   }
 }
