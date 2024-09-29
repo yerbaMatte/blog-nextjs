@@ -1,34 +1,30 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
-  const imageRef = useRef<HTMLImageElement>(null);
 
-  useEffect(() => {
-    imageRef.current!.style.filter =
-      theme === "light" ? "none" : "invert(100%)";
-  }, [theme]);
-
-  const onModeIconChange = () => {
-    const changeThemeValue = theme === "dark" ? "light" : "dark";
-    setTheme(changeThemeValue);
-    imageRef.current!.src = `svg/${theme}.svg`;
-
-    if (theme === "dark") {
-      imageRef.current!.style.filter = "none";
-    } else {
-      imageRef.current!.style.filter = "invert(100%)";
-    }
-  };
+  const changeThemeValue = theme === "dark" ? "light" : "dark";
 
   return (
     <div className="flex gap-4 cursor-pointer">
       <Image
-        ref={imageRef}
+        data-hide-on-theme="dark"
+        src={`svg/dark.svg`}
+        alt={`dark mode icon`}
+        width={24}
+        height={24}
+        style={{
+          maxWidth: "24px",
+        }}
+        onClick={() => setTheme(changeThemeValue)}
+        loading="lazy"
+        unoptimized
+      />
+      <Image
+        data-hide-on-theme="light"
         src={`svg/light.svg`}
         alt={`light mode icon`}
         width={24}
@@ -37,7 +33,7 @@ export default function ThemeSwitcher() {
           filter: "invert(100%)",
           maxWidth: "24px",
         }}
-        onClick={() => onModeIconChange()}
+        onClick={() => setTheme(changeThemeValue)}
         loading="lazy"
         unoptimized
       />

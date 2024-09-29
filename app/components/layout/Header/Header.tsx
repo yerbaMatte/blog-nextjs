@@ -20,16 +20,24 @@ import ThemeSwitcher from "../ThemeSwitcher";
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
 import styles from "./Header.module.scss";
+import { useRouter } from "next/navigation";
 
 export default function Header({ children }: { children: JSX.Element }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname().substring(1);
   const menuItems = useMemo(() => ["Home", "Blog", "About", "Contact"], []);
+  const router = useRouter();
+
+  const onMenuItemClick = () => {
+    // router.push("/about");
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <Skeleton isLoaded={true}>
       <Navbar
         onMenuOpenChange={setIsMenuOpen}
+        isMenuOpen={isMenuOpen}
         disableAnimation
         className={styles.header_layout}
         height="8rem"
@@ -37,6 +45,7 @@ export default function Header({ children }: { children: JSX.Element }) {
           wrapper: "px-2 md:px-6",
           item: [
             "relative",
+            "py-1",
             "data-[active=true]:before:w-full",
             "data-[active=true]:font-semibold",
             "data-[active=true]:text-primary-500",
@@ -53,7 +62,19 @@ export default function Header({ children }: { children: JSX.Element }) {
             "before:duration-600",
             "before:ease-in-out",
           ],
-          menuItem: ["text-center", "py-2"],
+          menuItem: [
+            "py-2",
+            "relative",
+            "data-[active=true]:before:w-full",
+            "data-[active=true]:font-semibold",
+            "data-[active=true]:text-primary-500",
+            "before:content-['']",
+            "before:absolute",
+            "before:bottom-0",
+            "before:left-0",
+            "before:h-[2px]",
+            "before:bg-primary-500",
+          ],
         }}
       >
         <NavbarContent justify="start">
@@ -214,11 +235,19 @@ export default function Header({ children }: { children: JSX.Element }) {
           className="sm:hidden mr-2"
         />
         <NavbarMenu className="items-center justify-between">
-          <ul className="w-full">
+          <ul className="w-full flex flex-col items-center gap-y-2">
             {menuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
+              <NavbarMenuItem
+                key={`${item}-${index}`}
+                isActive={
+                  item === "Home"
+                    ? pathname === ""
+                    : item.toLowerCase() === pathname
+                }
+              >
                 <NextUILink
-                  className="text-2xl"
+                  className="text-3xl"
+                  onClick={() => onMenuItemClick()}
                   color="foreground"
                   as={Link}
                   href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
@@ -227,17 +256,6 @@ export default function Header({ children }: { children: JSX.Element }) {
                 </NextUILink>
               </NavbarMenuItem>
             ))}
-            <NavbarMenuItem key={"resume"}>
-              <NextUILink
-                color="foreground"
-                isExternal
-                showAnchorIcon
-                href="#"
-                className="text-2xl"
-              >
-                Resume
-              </NextUILink>
-            </NavbarMenuItem>
           </ul>
           <li>{children}</li>
         </NavbarMenu>
