@@ -21,7 +21,6 @@ export default function ThemeSwitcher() {
         }}
         onClick={() => setTheme(changeThemeValue)}
         loading="lazy"
-        unoptimized
       />
       <Image
         data-hide-on-theme="light"
@@ -35,7 +34,6 @@ export default function ThemeSwitcher() {
         }}
         onClick={() => setTheme(changeThemeValue)}
         loading="lazy"
-        unoptimized
       />
     </div>
   );

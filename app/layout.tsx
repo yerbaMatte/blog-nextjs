@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import Providers from "./providers";
 import "./globals.css";
 
-const Footer = dynamic(() => import("./components/layout/Footer"));
+const Footer = dynamic(() => import("./components/layout/Footer/Footer"));
 import Header from "./components/layout/Header/Header";
 
 export const metadata: Metadata = {
@@ -28,9 +28,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <main className="flex flex-col min-h-screen">
-            <Header>
-              <Footer />
-            </Header>
+            <Header footer={<Footer />} />
             <section className="grow">{children}</section>
             <Footer />
           </main>
