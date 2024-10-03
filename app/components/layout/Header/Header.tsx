@@ -14,7 +14,7 @@ import {
 
 import Link from "next/link";
 import ThemeSwitcher from "../ThemeSwitcher";
-import { item, menu, menuItem } from "./headerSlots";
+import { item, menu, menuItem, wrapper } from "./headerSlots";
 
 import { useMemo, useState } from "react";
 import { usePathname } from "next/navigation";
@@ -32,11 +32,11 @@ export default function Header({ footer }: { footer: JSX.Element }) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
-      disableAnimation
+      // disableAnimation
       className={styles.header_layout}
       height="8rem"
       classNames={{
-        wrapper: "px-2 md:px-6",
+        wrapper,
         item,
         menuItem,
         menu,

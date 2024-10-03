@@ -1,3 +1,5 @@
+export const wrapper = "px-2 md:px-6";
+
 export const item = [
   "relative",
   "py-1",
