@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+import { Divider } from "@nextui-org/react";
 
 import Providers from "./providers";
 import "./globals.css";
@@ -29,7 +30,9 @@ export default function RootLayout({
         <Providers>
           <main className="flex flex-col min-h-screen">
             <Header footer={<Footer />} />
-            <section className="grow">{children}</section>
+            <Divider />
+            <section className="grow p-3 md:p-6 flex">{children}</section>
+            <Divider />
             <Footer />
           </main>
         </Providers>
