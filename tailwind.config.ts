@@ -20,6 +20,9 @@ const config: Config = {
         h5: "20px",
         h6: "16px",
       },
+      colors: {
+        divider: "#ffffff26",
+      },
     },
   },
   plugins: [
