@@ -1,7 +1,97 @@
-import React from "react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Divider,
+  Image,
+  Textarea,
+  Button,
+} from "@nextui-org/react";
+
+import { Input } from "@nextui-org/react";
+
+import ParagraphList from "../components/blog/paragraph_list/ParagraphList";
+import { contactParagraphs } from "./contactParagraphs";
 
 const ContactPage = () => {
-  return <div>ContactPage</div>;
+  return (
+    <div className="flex flex-col items-center h-42 my-2 w-full">
+      <h2 className="text-h2">Contact</h2>
+      <ParagraphList paragraphs={contactParagraphs} />
+      <Card className="my-8 w-full max-w-[800px] bg-background border border-divider">
+        <CardHeader className="flex">
+          <Image
+            data-hide-on-theme="light"
+            src="svg/mate.svg"
+            alt="yerba mate drink"
+            width={32}
+            height={32}
+            style={{
+              filter: "invert(100%)",
+            }}
+          />
+          <Image
+            data-hide-on-theme="dark"
+            src="svg/mate.svg"
+            alt="yerba mate drink"
+            width={32}
+            height={32}
+          />
+          <p className="text-md py-2">
+            Fill out the form below, and I'll be in touch!
+          </p>
+          <div className="flex flex-col"></div>
+        </CardHeader>
+        <Divider />
+        <CardBody className="flex flex-col gap-y-3">
+          <Input
+            isClearable
+            variant="bordered"
+            type="name"
+            label="Name"
+            classNames={{
+              inputWrapper: ["border-[1px]"],
+            }}
+          />
+          <Input
+            isClearable
+            variant="bordered"
+            type="email"
+            label="Email"
+            classNames={{
+              inputWrapper: ["border-[1px]"],
+            }}
+          />
+          <Input
+            isClearable
+            variant="bordered"
+            type="subject"
+            label="Subject"
+            classNames={{
+              inputWrapper: ["border-[1px]"],
+            }}
+          />
+          <Textarea
+            variant="bordered"
+            label="Description"
+            classNames={{
+              inputWrapper: ["border-[1px]"],
+            }}
+          />
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <Button
+            variant="bordered"
+            className="w-full border-[1px] hover:border-foreground"
+          >
+            SEND MESSAGE
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  );
 };
 
 export default ContactPage;

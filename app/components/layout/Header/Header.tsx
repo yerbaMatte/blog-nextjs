@@ -32,7 +32,6 @@ export default function Header({ footer }: { footer: JSX.Element }) {
     <Navbar
       onMenuOpenChange={setIsMenuOpen}
       isMenuOpen={isMenuOpen}
-      // disableAnimation
       className={styles.header_layout}
       height="8rem"
       classNames={{
