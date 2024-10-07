@@ -9,16 +9,21 @@ import {
   Button,
 } from "@nextui-org/react";
 
-import { Input } from "@nextui-org/react";
-
-import ParagraphList from "../components/blog/paragraph_list/ParagraphList";
-import { contactParagraphs } from "./contactParagraphs";
+import { Input, Link } from "@nextui-org/react";
 
 const ContactPage = () => {
   return (
     <div className="flex flex-col items-center h-42 my-2 w-full">
       <h2 className="text-h2">Contact</h2>
-      <ParagraphList paragraphs={contactParagraphs} />
+      <p className="text-center">
+        You can also shoot me an email directly on{" "}
+        <Link
+          className="text-base font-bold"
+          href="mailto: milosz.lewandowski@icloud.com"
+        >
+          milosz.lewandowski@icloud.com
+        </Link>
+      </p>
       <Card className="my-8 w-full max-w-[800px] bg-background border border-divider">
         <CardHeader className="flex">
           <Image
@@ -38,10 +43,9 @@ const ContactPage = () => {
             width={32}
             height={32}
           />
-          <p className="text-md py-2">
-            Fill out the form below, and I'll be in touch!
+          <p className="text-md ml-2 py-2">
+            Fill out the form below, and I&apos;ll be in touch!
           </p>
-          <div className="flex flex-col"></div>
         </CardHeader>
         <Divider />
         <CardBody className="flex flex-col gap-y-3">

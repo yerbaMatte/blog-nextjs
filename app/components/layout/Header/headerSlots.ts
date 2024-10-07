@@ -1,4 +1,4 @@
-export const wrapper = "px-2 md:px-6";
+export const wrapper = "px-2 md:px-6 max-w-none";
 
 export const item = [
   "relative",

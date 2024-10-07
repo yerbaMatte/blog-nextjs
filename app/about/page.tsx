@@ -13,6 +13,7 @@ const AboutPage = () => {
             className="w-full h-auto rounded-full"
             style={{ objectFit: "contain" }}
             quality={100}
+            priority
             width={0}
             height={0}
             sizes="100vw"
