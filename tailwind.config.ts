@@ -20,9 +20,6 @@ const config: Config = {
         h5: "20px",
         h6: "16px",
       },
-      colors: {
-        divider: "#ffffff26",
-      },
     },
   },
   plugins: [
@@ -47,6 +44,7 @@ const config: Config = {
               DEFAULT: "#1c542b",
               foreground: "#ffffff",
             },
+            divider: "#0000001a",
           },
         },
         dark: {
@@ -68,6 +66,7 @@ const config: Config = {
               DEFAULT: "#4CAF50",
               foreground: "#ffffff",
             },
+            divider: "#ffffff26",
           },
         },
       },
