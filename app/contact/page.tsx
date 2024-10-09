@@ -13,7 +13,7 @@ import { Input, Link } from "@nextui-org/react";
 
 const ContactPage = () => {
   return (
-    <div className="flex flex-col items-center h-42 my-2 w-full">
+    <div className="flex flex-col items-center justify-center h-42 my-2 w-full">
       <h2 className="text-h2">Contact</h2>
       <p className="text-center">
         You can also shoot me an email directly on{" "}
@@ -24,7 +24,7 @@ const ContactPage = () => {
           milosz.lewandowski@icloud.com
         </Link>
       </p>
-      <Card className="my-8 w-full max-w-[800px] bg-background border border-divider">
+      <Card className="my-8 w-full max-w-[800px] bg-background border border-divider grow">
         <CardHeader className="flex">
           <Image
             data-hide-on-theme="light"
@@ -43,12 +43,10 @@ const ContactPage = () => {
             width={32}
             height={32}
           />
-          <p className="text-md ml-2 py-2">
-            Fill out the form below, and I&apos;ll be in touch!
-          </p>
+          <p className="text-md ml-2 py-2">Fill out the form below!</p>
         </CardHeader>
         <Divider />
-        <CardBody className="flex flex-col gap-y-3">
+        <CardBody className="flex flex-col gap-y-3 ">
           <Input
             isClearable
             variant="bordered"
