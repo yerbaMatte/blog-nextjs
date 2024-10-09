@@ -1,0 +1,11 @@
+.hero {
+  height: calc(100vh - 136px);
+}
+
+.cta_button {
+  @apply w-full;
+
+  @media (min-width: 430px) {
+    @apply w-1/2;
+  }
+}
