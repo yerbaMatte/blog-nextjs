@@ -31,11 +31,19 @@ const HeroComponent = () => {
         <div className="flex w-full gap-x-4">
           <Button
             variant="bordered"
-            className={styles.cta_button}
+            className={`${styles.cta_button} bg-foreground text-background hover:bg-background hover:text-foreground`}
             as={Link}
             href="/blog"
           >
             Go to Blog
+          </Button>
+          <Button
+            variant="bordered"
+            className={`${styles.cta_button} bg-background text-foreground hover:bg-foreground hover:text-background`}
+            as={Link}
+            href="/about"
+          >
+            About me
           </Button>
         </div>
       </div>

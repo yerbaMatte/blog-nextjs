@@ -173,6 +173,41 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             />
           </NextUILink>
         </li>
+        <li className="h-6">
+          <NextUILink
+            data-hide-on-theme="dark"
+            isExternal
+            href="http://discordapp.com/users/1028667497672609894"
+          >
+            <Image
+              src="svg/discord.svg"
+              alt="discord profile"
+              width={24}
+              height={24}
+              style={{
+                maxWidth: "24px",
+              }}
+              className={styles.svg_icon}
+            />
+          </NextUILink>
+          <NextUILink
+            data-hide-on-theme="light"
+            isExternal
+            href="http://discordapp.com/users/1028667497672609894"
+          >
+            <Image
+              src="svg/discord.svg"
+              alt="discord profile"
+              width={24}
+              height={24}
+              style={{
+                filter: "invert(100%)",
+                maxWidth: "24px",
+              }}
+              className={styles.svg_icon}
+            />
+          </NextUILink>
+        </li>
         <li>
           <ThemeSwitcher />
         </li>

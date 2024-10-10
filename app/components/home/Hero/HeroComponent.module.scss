@@ -4,7 +4,7 @@
   height: calc(100vh - 136px);
 
   .hero_description {
-    @apply flex flex-col h-full justify-around md:justify-center md:gap-y-8 px-2 md:px-0;
+    @apply flex flex-col h-full justify-center md:gap-y-8 px-2 md:px-0;
   }
 
   .hero_heading {
@@ -13,10 +13,10 @@
 }
 
 .cta_button {
-  @apply w-full uppercase border-[1px] border-foreground bg-foreground font-medium text-background text-medium mb-8;
+  @apply w-full uppercase border-[1px] border-foreground font-medium text-medium my-16 md:my-4;
   @apply w-full;
 
   @media (min-width: 430px) {
-    @apply w-1/2;
+    @apply w-1/4;
   }
 }
