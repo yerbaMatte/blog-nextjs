@@ -1,8 +1,19 @@
-.hero {
+.hero_layout {
+  @apply container;
+  @apply flex items-center justify-start relative;
   height: calc(100vh - 136px);
+
+  .hero_description {
+    @apply flex flex-col h-full justify-around md:justify-center md:gap-y-8 px-2 md:px-0;
+  }
+
+  .hero_heading {
+    @apply max-w-[310px] md:max-w-[400px] text-h2 md:text-h1 font-normal leading-tight mb-4;
+  }
 }
 
 .cta_button {
+  @apply w-full uppercase border-[1px] border-foreground bg-foreground font-medium text-background text-medium mb-8;
   @apply w-full;
 
   @media (min-width: 430px) {
