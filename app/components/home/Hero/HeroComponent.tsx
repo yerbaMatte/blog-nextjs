@@ -5,15 +5,13 @@ import styles from "./HeroComponent.module.scss";
 
 const HeroComponent = () => {
   return (
-    <div
-      className={`container flex items-center justify-center gap-x-8 ${styles.hero}`}
-    >
-      <div className="flex flex-col h-full justify-center">
-        <div>
-          <h1 className="max-w-[310px] md:max-w-[600px] text-h2 md:text-h1 font-normal leading-tight mb-4 md:w-1/2">
+    <div className={styles.hero_layout}>
+      <div className={styles.hero_description}>
+        <div className="md:w-3/4 lg:w-1/2">
+          <h1 className={styles.hero_heading}>
             Welcome to <span className="font-bold">CODE BREW!</span>
           </h1>
-          <p className="py-1 leading-7 md:w-3/4">
+          <p className="py-1 leading-7">
             <span className="font-bold">CODE BREW</span> by{" "}
             <NextUILink
               href="/about"
@@ -25,7 +23,7 @@ const HeroComponent = () => {
             is a blog for Software Engineers focused on enhancing productivity
             and optimizing workflows.
           </p>
-          <p className="py-1 leading-7 md:w-3/4">
+          <p className="py-1 leading-7">
             It offers insights on a wide range of topics, from mobile and web
             development to general software engineering.
           </p>
@@ -33,7 +31,7 @@ const HeroComponent = () => {
         <div className="flex w-full gap-x-4">
           <Button
             variant="bordered"
-            className={`full uppercase border-[1px] border-foreground bg-foreground font-medium text-background text-medium my-8 md:w-1/2 ${styles.cta_button}`}
+            className={styles.cta_button}
             as={Link}
             href="/blog"
           >
@@ -41,24 +39,41 @@ const HeroComponent = () => {
           </Button>
         </div>
       </div>
-      <div className="hidden md:block w-1/2 relative h-full">
-        <Image
-          data-hide-on-theme="dark"
-          src="/images/hero_background.webp"
-          fill
-          alt="computer hero background"
-          style={{ objectFit: "contain" }}
-          priority
-        />
-        <Image
-          data-hide-on-theme="light"
-          src="/images/hero_background.webp"
-          fill
-          alt="computer hero background"
-          style={{ objectFit: "contain", filter: "invert(100%)" }}
-          priority
-        />
-      </div>
+      <Image
+        data-hide-on-theme="dark"
+        src="/images/hero_background.webp"
+        width={400}
+        height={400}
+        alt="computer hero background"
+        style={{
+          objectFit: "contain",
+          position: "absolute",
+          top: "50%",
+          left: "75%",
+          transform: "translate(-30%, -50%)",
+          objectPosition: "right bottom",
+        }}
+        className="hidden lg:block"
+        priority
+      />
+      <Image
+        data-hide-on-theme="light"
+        src="/images/hero_background.webp"
+        width={400}
+        height={400}
+        alt="computer hero background"
+        style={{
+          objectFit: "contain",
+          filter: "invert(100%)",
+          position: "absolute",
+          top: "50%",
+          left: "75%",
+          transform: "translate(-30%, -50%)",
+          objectPosition: "right bottom",
+        }}
+        className="hidden lg:block"
+        priority
+      />
     </div>
   );
 };
