@@ -10,11 +10,18 @@
   .hero_heading {
     @apply max-w-[310px] md:max-w-[400px] text-h2 md:text-h1 font-normal leading-tight mb-4;
   }
+
+  .blog_button {
+    @apply bg-foreground text-background hover:bg-background hover:text-foreground;
+  }
+
+  .about_button {
+    @apply bg-background text-foreground hover:bg-foreground hover:text-background;
+  }
 }
 
 .cta_button {
   @apply w-full uppercase border-[1px] border-foreground font-medium text-medium my-16 md:my-4;
-  @apply w-full;
 
   @media (min-width: 430px) {
     @apply w-1/4;

@@ -14,11 +14,11 @@
   }
   .svg_icon {
     @apply hidden;
-    @media (min-width: 330px) {
+    @media (min-width: 350px) {
       display: block;
     }
   }
 }
-∑ .navbar_mobile_list {
+.navbar_mobile_list {
   @apply w-full flex flex-col items-center gap-y-4;
 }
