@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ParagraphList from "../components/blog/paragraph_list/ParagraphList";
+import ParagraphList from "../../components/blog/paragraph_list/ParagraphList";
 import { aboutParagraphs } from "./aboutParagraphs";
 
 const AboutPage = () => {

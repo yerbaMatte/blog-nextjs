@@ -6,8 +6,8 @@ import { Divider } from "@nextui-org/react";
 import Providers from "./providers";
 import "./globals.css";
 
-const Footer = dynamic(() => import("./components/layout/Footer/Footer"));
-import Header from "./components/layout/Header/Header";
+const Footer = dynamic(() => import("../components/layout/footer/Footer"));
+import Header from "../components/layout/header/Header";
 
 export const metadata: Metadata = {
   title: "Code Brew by yerbaMatte",
