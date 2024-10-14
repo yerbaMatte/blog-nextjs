@@ -1,6 +1,6 @@
 import { FieldError, UseFormRegister } from "react-hook-form";
 
-export type FormData = {
+export type ContactFormData = {
   name: string;
   email: string;
   subject: string;
@@ -11,7 +11,7 @@ export type FormFieldProps = {
   type: string;
   label: string;
   name: ValidFieldNames;
-  register: UseFormRegister<FormData>;
+  register: UseFormRegister<ContactFormData>;
   error: FieldError | undefined;
   isTextArea?: boolean;
   classNames?: {

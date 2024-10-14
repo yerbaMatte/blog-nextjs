@@ -1,7 +1,7 @@
 import { z, ZodType } from "zod";
-import { FormData } from "./contactFormTypes";
+import { ContactFormData } from "./contactFormTypes";
 
-export const ApplicationSchema: ZodType<FormData> = z.object({
+export const ApplicationSchema: ZodType<ContactFormData> = z.object({
   name: z
     .string()
     .min(2, "Name must be at least 2 characters")

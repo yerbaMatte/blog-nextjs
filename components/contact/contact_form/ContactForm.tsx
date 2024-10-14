@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { FormData } from "@/types/contact/contactFormTypes";
+import { ContactFormData } from "@/types/contact/contactFormTypes";
 import FormField from "./FormField";
 
 import {
@@ -27,11 +27,11 @@ const ContactForm = () => {
     formState: { errors },
     setError,
     reset,
-  } = useForm<FormData>({
+  } = useForm<ContactFormData>({
     resolver: zodResolver(ApplicationSchema),
   });
 
-  const onSubmit = async (data: FormData) => {
+  const onSubmit = async (data: ContactFormData) => {
     console.log("SUCCESS", data);
     reset();
   };
