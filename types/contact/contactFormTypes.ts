@@ -4,7 +4,7 @@ export type FormData = {
   name: string;
   email: string;
   subject: string;
-  description: string;
+  message: string;
 };
 
 export type FormFieldProps = {
@@ -19,4 +19,4 @@ export type FormFieldProps = {
   };
 };
 
-export type ValidFieldNames = "name" | "email" | "subject" | "description";
+export type ValidFieldNames = "name" | "email" | "subject" | "message";

@@ -11,8 +11,8 @@ export const ApplicationSchema: ZodType<FormData> = z.object({
     .string()
     .min(3, "Subject must be at least 3 characters")
     .max(100, "Subject must be less than 100 characters"),
-  description: z
+  message: z
     .string()
-    .min(10, "Description must be at least 10 characters")
-    .max(500, "Description must be less than 500 characters"),
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message must be less than 500 characters"),
 });

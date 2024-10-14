@@ -26,12 +26,14 @@ const ContactForm = () => {
     handleSubmit,
     formState: { errors },
     setError,
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(ApplicationSchema),
   });
 
   const onSubmit = async (data: FormData) => {
     console.log("SUCCESS", data);
+    reset();
   };
 
   return (
@@ -84,11 +86,11 @@ const ContactForm = () => {
             classNames={inputWrapperSlot}
           />
           <FormField
-            type="description"
-            label="Description"
-            name="description"
+            type="message"
+            label="Message"
+            name="message"
             register={register}
-            error={errors.description}
+            error={errors.message}
             classNames={inputWrapperSlot}
             isTextArea
           />
