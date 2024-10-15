@@ -9,9 +9,9 @@ const ContactPage = () => {
         You can also shoot me an email directly on{" "}
         <Link
           className="text-base font-bold"
-          href="mailto: milosz.lewandowski@icloud.com"
+          href="mailto: milosz1lewandowski@gmail.com"
         >
-          milosz.lewandowski@icloud.com
+          milosz1lewandowski@gmail.com
         </Link>
       </p>
       <ContactForm />

@@ -2,6 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { ContactFormData } from "@/types/contact/contactFormTypes";
 import FormField from "./FormField";
 
@@ -13,6 +14,9 @@ import {
   Divider,
   Image,
   Button,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
 } from "@nextui-org/react";
 import { ApplicationSchema } from "@/types/contact/contactFormSchema";
 
@@ -21,19 +25,37 @@ const inputWrapperSlot = {
 };
 
 const ContactForm = () => {
+  const [showPopover, setShowPopover] = useState(false);
+
   const {
     register,
     handleSubmit,
-    formState: { errors },
-    setError,
+    formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(ApplicationSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log("SUCCESS", data);
-    reset();
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        reset();
+        setShowPopover(true);
+        setTimeout(() => {
+          setShowPopover(false);
+        }, 3000); //
+      } else {
+        console.error("Error sending email:", response.statusText);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -96,13 +118,29 @@ const ContactForm = () => {
           />
         </CardBody>
         <CardFooter>
-          <Button
-            variant="bordered"
-            className="w-full border-[1px] hover:border-foreground py-6"
-            type="submit"
-          >
-            SEND MESSAGE
-          </Button>
+          {/* zmienic kolor na zielony brandowy / dodac czerwony popover jak fail */}
+          <Popover isOpen={showPopover} color="success" placement="top">
+            <PopoverTrigger>
+              <Button
+                variant="bordered"
+                className="w-full border-[1px] hover:border-foreground py-6"
+                type="submit"
+                isLoading={isSubmitting}
+              >
+                {isSubmitting ? "SENDING!" : "SEND MESSAGE"}
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <div className="px-2 py-4">
+                <div className="text-small font-bold text-background text-center">
+                  SUCCESS
+                </div>
+                <div className="text-tiny text-background">
+                  Your message has been sent!
+                </div>
+              </div>
+            </PopoverContent>
+          </Popover>
         </CardFooter>
       </form>
     </Card>
