@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import { Divider } from "@nextui-org/react";
 
 import Providers from "./providers";
@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   description: "Essential Insights for Software Engineers.",
 };
 
-const inter = Inter({
+const roboto = Rubik({
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -25,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={inter.className}>
+    <html suppressHydrationWarning lang="en" className={roboto.className}>
       <body>
         <Providers>
           <main className="flex flex-col min-h-screen">

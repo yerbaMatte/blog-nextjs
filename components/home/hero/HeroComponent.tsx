@@ -10,7 +10,7 @@ const HeroComponent = () => {
         <div className="md:w-3/4 lg:w-2/3">
           <h1 className={styles.hero_heading}>
             Welcome to{" "}
-            <span className="font-bold bg-primary-500 text-background">
+            <span className="font-bold bg-primary-500 text-background px-1">
               CODE BREW!
             </span>
           </h1>
