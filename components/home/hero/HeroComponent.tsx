@@ -63,7 +63,7 @@ const HeroComponent = () => {
           left: "75%",
           transform: "translate(-30%, -50%) scaleX(-1)",
         }}
-        className="hidden lg:block"
+        className="hidden lg:block w-auto"
         priority
       />
       <Image
@@ -80,7 +80,7 @@ const HeroComponent = () => {
           left: "75%",
           transform: "translate(-30%, -50%) scaleX(-1)",
         }}
-        className="hidden lg:block"
+        className="hidden lg:block w-auto"
         priority
       />
     </div>

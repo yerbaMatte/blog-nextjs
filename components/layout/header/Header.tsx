@@ -90,6 +90,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               color="foreground"
               as={Link}
               href={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              className="md:text-lg"
             >
               {item}
             </NextUILink>

@@ -118,8 +118,7 @@ const ContactForm = () => {
           />
         </CardBody>
         <CardFooter>
-          {/* zmienic kolor na zielony brandowy / dodac czerwony popover jak fail */}
-          <Popover isOpen={showPopover} color="success" placement="top">
+          <Popover isOpen={showPopover} placement="top">
             <PopoverTrigger>
               <Button
                 variant="bordered"
@@ -130,8 +129,8 @@ const ContactForm = () => {
                 {isSubmitting ? "SENDING!" : "SEND MESSAGE"}
               </Button>
             </PopoverTrigger>
-            <PopoverContent>
-              <div className="px-2 py-4">
+            <PopoverContent className="bg-primary-500">
+              <div className="px-12 py-2">
                 <div className="text-small font-bold text-background text-center">
                   SUCCESS
                 </div>
