@@ -20,6 +20,9 @@ const config: Config = {
         h5: "20px",
         h6: "16px",
       },
+      backgroundColor: {
+        greish: "rgba(63, 63, 70, 0.4)",
+      },
     },
     container: {
       padding: {

@@ -8,7 +8,7 @@
   }
 
   .hero_heading {
-    @apply max-w-[250px] md:max-w-[350px] text-h2 md:text-h1 leading-tight mb-4;
+    @apply max-w-[280px] md:max-w-[350px] text-[40px] md:text-h1 leading-tight my-4;
   }
 
   .blog_button {
@@ -24,6 +24,6 @@
   @apply w-full uppercase border-[1px] border-foreground font-medium text-medium my-16 md:my-4;
 
   @media (min-width: 430px) {
-    @apply w-1/4;
+    @apply w-1/2;
   }
 }

@@ -1,4 +1,4 @@
-import { Link as NextUILink, Button } from "@nextui-org/react";
+import { Link as NextUILink, Button, Code } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeroComponent.module.scss";
@@ -8,13 +8,18 @@ const HeroComponent = () => {
     <div className={styles.hero_layout}>
       <div className={styles.hero_description}>
         <div className="md:w-3/4 lg:w-2/3">
+          <Code
+            className="mt-6 -ml-2"
+            radius="none"
+            size="md"
+          >{`$ HELLO, MY NAME IS MIŁOSZ `}</Code>
           <h1 className={styles.hero_heading}>
             Welcome to{" "}
             <span className="font-bold bg-primary-500 text-background px-1">
               CODE BREW!
             </span>
           </h1>
-          <p className="py-1 leading-7">
+          <p className="py-2 leading-7">
             <span className="font-bold">CODE BREW</span> by{" "}
             <NextUILink
               href="/about"
@@ -23,15 +28,20 @@ const HeroComponent = () => {
             >
               @yerbaMatte
             </NextUILink>{" "}
-            is a blog for Software Engineers focused on enhancing productivity
-            and optimizing workflows.
+            is a spot for devs looking to level up their productivity and get
+            their workflows tight.
           </p>
-          <p className="py-1 leading-7">
-            It offers insights on a wide range of topics, from mobile and web
-            development to general software engineering.
+          <p className="py-2 leading-7">
+            We dive into web dev and software engineering, sharing tips to help
+            you code smarter, not harder.
           </p>
         </div>
-        <div className="flex w-full gap-x-4">
+        {/* TODO: subscribe/newsletter */}
+        {/* <div className="flex md:w-3/4 lg:w-2/3 gap-x-4">
+          <Input placeholder="Type your email ..." />
+          <Button className="px-8">SUBSCRIBE</Button>
+        </div> */}
+        <div className="flex md:w-3/4 lg:w-2/3 gap-x-4">
           <Button
             variant="bordered"
             className={`${styles.cta_button} ${styles.blog_button}`}
@@ -62,8 +72,10 @@ const HeroComponent = () => {
           top: "50%",
           left: "75%",
           transform: "translate(-30%, -50%) scaleX(-1)",
+          width: "400px",
+          height: "400px",
         }}
-        className="hidden lg:block w-auto"
+        className="hidden lg:block"
         priority
       />
       <Image
@@ -79,8 +91,10 @@ const HeroComponent = () => {
           top: "50%",
           left: "75%",
           transform: "translate(-30%, -50%) scaleX(-1)",
+          width: "400px",
+          height: "400px",
         }}
-        className="hidden lg:block w-auto"
+        className="hidden lg:block"
         priority
       />
     </div>

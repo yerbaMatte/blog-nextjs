@@ -1,0 +1,23 @@
+.post_item {
+  @apply my-6;
+}
+
+.title {
+  @apply text-h2 text-primary-500;
+  @apply leading-10;
+}
+
+.time_tags_wrapper {
+  @apply flex items-center;
+  @apply my-2 gap-x-2;
+
+  .time {
+    @apply text-[#818A91];
+  }
+
+  .chip {
+    @apply px-2 py-1;
+    @apply bg-greish;
+    @apply border border-divider;
+  }
+}

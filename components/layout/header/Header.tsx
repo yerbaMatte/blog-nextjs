@@ -97,7 +97,13 @@ export default function Header({ footer }: { footer: JSX.Element }) {
           </NavbarItem>
         ))}
         <NavbarItem key={"resume"} className={styles.no_hover_effects}>
-          <NextUILink color="foreground" isExternal showAnchorIcon href="#">
+          <NextUILink
+            color="foreground"
+            className="md:text-lg"
+            isExternal
+            showAnchorIcon
+            href="#"
+          >
             Resume
           </NextUILink>
         </NavbarItem>
