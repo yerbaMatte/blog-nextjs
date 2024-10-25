@@ -47,7 +47,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             <Link href="/" className="min-w-12">
               <Image
                 data-hide-on-theme="light"
-                src="svg/mate.svg"
+                src="/svg/mate.svg"
                 alt="yerba mate drink"
                 width={48}
                 height={48}
@@ -58,7 +58,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               />
               <Image
                 data-hide-on-theme="dark"
-                src="svg/mate.svg"
+                src="/svg/mate.svg"
                 alt="yerba mate drink"
                 width={48}
                 height={48}
@@ -117,7 +117,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="https://www.linkedin.com/in/milosz-lewandowskii/"
           >
             <Image
-              src="svg/linkedin.svg"
+              src="/svg/linkedin.svg"
               alt="linkedin profile"
               width={24}
               height={24}
@@ -133,7 +133,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="https://www.linkedin.com/in/milosz-lewandowskii/"
           >
             <Image
-              src="svg/linkedin.svg"
+              src="/svg/linkedin.svg"
               alt="linkedin profile"
               width={24}
               height={24}
@@ -152,7 +152,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="https://www.github.com/yerbaMatte"
           >
             <Image
-              src="svg/github.svg"
+              src="/svg/github.svg"
               alt="github profile"
               width={24}
               height={24}
@@ -168,7 +168,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="https://www.github.com/yerbaMatte"
           >
             <Image
-              src="svg/github.svg"
+              src="/svg/github.svg"
               alt="github profile"
               width={24}
               height={24}
@@ -187,7 +187,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="http://discordapp.com/users/1028667497672609894"
           >
             <Image
-              src="svg/discord.svg"
+              src="/svg/discord.svg"
               alt="discord profile"
               width={24}
               height={24}
@@ -203,7 +203,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             href="http://discordapp.com/users/1028667497672609894"
           >
             <Image
-              src="svg/discord.svg"
+              src="/svg/discord.svg"
               alt="discord profile"
               width={24}
               height={24}

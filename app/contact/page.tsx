@@ -14,7 +14,6 @@ const ContactPage = () => {
           milosz1lewandowski@gmail.com
         </Link>
       </p>
-
       <ContactForm />
     </div>
   );

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const LastCreatedPosts = () => {
   return (
-    <div className="lg:my-6 rounded-lg lg:fixed p-4 bg-greish">
+    <div className="lg:my-6 rounded-lg lg:fixed p-4 bg-graish">
       <h4 className="text-h4 underline">Fresh Brews</h4>
       <ul className="list-decimal list-inside">
         <li className="mt-2">

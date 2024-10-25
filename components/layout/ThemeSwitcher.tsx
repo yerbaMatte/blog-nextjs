@@ -12,7 +12,7 @@ export default function ThemeSwitcher() {
     <div className="flex gap-4 cursor-pointer">
       <Image
         data-hide-on-theme="dark"
-        src={`svg/dark.svg`}
+        src={`/svg/dark.svg`}
         alt={`dark mode icon`}
         width={24}
         height={24}
@@ -24,7 +24,7 @@ export default function ThemeSwitcher() {
       />
       <Image
         data-hide-on-theme="light"
-        src={`svg/light.svg`}
+        src={`/svg/light.svg`}
         alt={`light mode icon`}
         width={24}
         height={24}

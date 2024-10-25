@@ -1,8 +1,10 @@
 export type PostItemType = {
   title: string;
   description: string;
-  publicationDate: string;
+  publishedAt: string;
+  documentId?: string;
   tags: string[];
+  slug: string;
 };
 
 export type LastCreatedPosts = {

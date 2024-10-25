@@ -1,6 +1,4 @@
 import Image from "next/image";
-import ParagraphList from "../../components/blog/paragraph_list/ParagraphList";
-import { aboutParagraphs } from "./aboutParagraphs";
 import { Divider } from "@nextui-org/react";
 
 const AboutPage = () => {
@@ -29,10 +27,23 @@ const AboutPage = () => {
             />
           </div>
         </div>
-        <ParagraphList
-          paragraphs={aboutParagraphs}
-          classname="max-w-[600px] max-h-fit px-4 md:px-2"
-        />
+        <div className="max-w-[600px] max-h-fit px-4 md:px-2">
+          <p className="py-2 text-justify">
+            Professionally, I'm a front-end developer who's passionate about web
+            development, performance optimization, and best practices.
+          </p>
+          <p className="py-2 text-justify">
+            I previously served as an Imagery Intelligence Officer in the Polish
+            Army and graduated from the Military University of Technology in
+            2020. During my service, I contributed to developing a frontend app
+            for my unit.
+          </p>
+          <p className="py-2 text-justify">
+            In my free time, I enjoy working with Python, DevOps, automation,
+            and VPS. Outside the digital world, I love staying active through
+            travel and sports.
+          </p>
+        </div>
       </div>
     </div>
   );
