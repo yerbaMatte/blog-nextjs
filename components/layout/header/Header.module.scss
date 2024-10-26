@@ -22,3 +22,10 @@
 .navbar_mobile_list {
   @apply w-full flex flex-col items-center gap-y-4;
 }
+
+[data-theme="dark"] {
+  .mate,
+  .svg_icon {
+    @apply invert;
+  }
+}

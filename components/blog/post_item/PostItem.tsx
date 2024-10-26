@@ -1,7 +1,7 @@
 import styles from "./PostItem.module.scss";
 import { Chip } from "@nextui-org/react";
 import Link from "next/link";
-import { PostItemType } from "@/types/blog/blogPostTypes";
+import { PostItemList } from "@/types/blog/blogPostTypes";
 
 const PostItem = ({
   title,
@@ -9,7 +9,7 @@ const PostItem = ({
   tags,
   slug,
   publishedAt,
-}: PostItemType) => {
+}: PostItemList) => {
   const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -23,7 +23,7 @@ const PostItem = ({
       </Link>
       <div className={styles.time_tags_wrapper}>
         <time className={styles.time}>{formattedDate}</time>
-        {tags.map((t: any, i) => (
+        {tags.map((t, i) => (
           <Chip className={styles.chip} size="md" key={i}>
             {t.title}
           </Chip>

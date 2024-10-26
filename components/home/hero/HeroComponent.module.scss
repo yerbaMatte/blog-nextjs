@@ -27,3 +27,9 @@
     @apply w-1/2;
   }
 }
+
+[data-theme="dark"] {
+  .hero {
+    @apply invert;
+  }
+}

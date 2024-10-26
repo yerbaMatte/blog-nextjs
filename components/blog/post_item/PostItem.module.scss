@@ -21,3 +21,10 @@
     @apply border border-divider;
   }
 }
+
+[data-theme="light"] {
+  .chip {
+    @apply bg-transparent;
+    @apply border-gray-300 border-1;
+  }
+}

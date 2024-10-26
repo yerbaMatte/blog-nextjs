@@ -12,7 +12,7 @@ const HeroComponent = () => {
             className="mt-6 -ml-2"
             radius="none"
             size="md"
-          >{`$ HELLO, MY NAME IS MIŁOSZ `}</Code>
+          >{`$ HELLO, MY NAME IS MIŁOSZ`}</Code>
           <h1 className={styles.hero_heading}>
             Welcome to{" "}
             <span className="font-bold bg-primary-500 text-background px-1">
@@ -61,8 +61,8 @@ const HeroComponent = () => {
         </div>
       </div>
       <Image
-        data-hide-on-theme="dark"
-        src="/images/hero_background.webp"
+        // data-hide-on-theme="dark"
+        src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/hero_background_e71bd77857.webp`}
         width={400}
         height={400}
         alt="black/white hero"
@@ -75,27 +75,7 @@ const HeroComponent = () => {
           width: "400px",
           height: "400px",
         }}
-        className="hidden lg:block"
-        priority
-      />
-      <Image
-        data-hide-on-theme="light"
-        src="/images/hero_background.webp"
-        width={400}
-        height={400}
-        alt="black/white hero"
-        style={{
-          objectFit: "contain",
-          filter: "invert(100%)",
-          position: "absolute",
-          top: "50%",
-          left: "75%",
-          transform: "translate(-30%, -50%) scaleX(-1)",
-          width: "400px",
-          height: "400px",
-        }}
-        className="hidden lg:block"
-        priority
+        className={`hidden lg:block ${styles.hero}`}
       />
     </div>
   );

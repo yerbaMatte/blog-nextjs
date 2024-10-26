@@ -16,7 +16,7 @@ const AboutPage = () => {
           <div className="w-72 md:w-80">
             <Image
               alt="profile image"
-              src="/images/profile_img.webp"
+              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/profile_img_5a3ee5f766.webp`}
               className="w-full h-auto rounded-full"
               style={{ objectFit: "contain" }}
               quality={100}
@@ -29,8 +29,8 @@ const AboutPage = () => {
         </div>
         <div className="max-w-[600px] max-h-fit px-4 md:px-2">
           <p className="py-2 text-justify">
-            Professionally, I'm a front-end developer who's passionate about web
-            development, performance optimization, and best practices.
+            Professionally, I&apos;m a front-end developer who&apos;s passionate
+            about web development, performance optimization, and best practices.
           </p>
           <p className="py-2 text-justify">
             I previously served as an Imagery Intelligence Officer in the Polish

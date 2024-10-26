@@ -1,12 +1,12 @@
 import { Divider } from "@nextui-org/react";
 import PostItem from "@/components/blog/post_item/PostItem";
-import { PostItemType } from "@/types/blog/blogPostTypes";
+import { PostItemList } from "@/types/blog/blogPostTypes";
 import { getAllPosts } from "@/lib/api/blogQueries";
 import { apiFetch } from "@/lib/api/apiClient";
 
 const BlogPage = async () => {
-  const data = await apiFetch<{ data: PostItemType[] }>(
-    `http://localhost:1337/api/posts?${getAllPosts}`
+  const data = await apiFetch<{ data: PostItemList[] }>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`
   );
 
   return (
@@ -19,7 +19,7 @@ const BlogPage = async () => {
         <div className="w-full max-w-[900px]">
           <ul>
             <Divider />
-            {data.data.map((p: PostItemType, i: number) => (
+            {data.data.map((p: PostItemList) => (
               <li key={p.documentId}>
                 <PostItem
                   title={p.title}

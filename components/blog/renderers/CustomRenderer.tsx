@@ -1,7 +1,4 @@
-import {
-  BlocksRenderer,
-  type BlocksContent,
-} from "@strapi/blocks-react-renderer";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Code } from "@/components/blog/renderers/Code";
 import { FeatureComponent } from "@/types/blog/featurePostTypes";
 import Image from "next/image";

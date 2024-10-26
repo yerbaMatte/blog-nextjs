@@ -46,18 +46,6 @@ export default function Header({ footer }: { footer: JSX.Element }) {
           <NavbarBrand>
             <Link href="/" className="min-w-12">
               <Image
-                data-hide-on-theme="light"
-                src="/svg/mate.svg"
-                alt="yerba mate drink"
-                width={48}
-                height={48}
-                style={{
-                  filter: "invert(100%)",
-                  marginRight: "0.25rem",
-                }}
-              />
-              <Image
-                data-hide-on-theme="dark"
                 src="/svg/mate.svg"
                 alt="yerba mate drink"
                 width={48}
@@ -65,6 +53,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
                 style={{
                   marginRight: "0.25rem",
                 }}
+                className={styles.mate}
               />
             </Link>
             <div className="flex flex-col">
@@ -102,7 +91,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             className="md:text-lg"
             isExternal
             showAnchorIcon
-            href="#"
+            href={`${process.env.NEXT_PUBLIC_API_URL}/uploads/ENG_Milosz_Lewandowski_Frontend_Developer_resume_b44707c392.pdf`}
           >
             Resume
           </NextUILink>
@@ -112,7 +101,6 @@ export default function Header({ footer }: { footer: JSX.Element }) {
       <NavbarContent justify="end" className={styles.navbar_content_icons}>
         <li className="h-6">
           <NextUILink
-            data-hide-on-theme="dark"
             isExternal
             href="https://www.linkedin.com/in/milosz-lewandowskii/"
           >
@@ -127,30 +115,9 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               className={styles.svg_icon}
             />
           </NextUILink>
-          <NextUILink
-            data-hide-on-theme="light"
-            isExternal
-            href="https://www.linkedin.com/in/milosz-lewandowskii/"
-          >
-            <Image
-              src="/svg/linkedin.svg"
-              alt="linkedin profile"
-              width={24}
-              height={24}
-              style={{
-                filter: "invert(100%)",
-                maxWidth: "24px",
-              }}
-              className={styles.svg_icon}
-            />
-          </NextUILink>
         </li>
         <li className="h-6">
-          <NextUILink
-            data-hide-on-theme="dark"
-            isExternal
-            href="https://www.github.com/yerbaMatte"
-          >
+          <NextUILink isExternal href="https://www.github.com/yerbaMatte">
             <Image
               src="/svg/github.svg"
               alt="github profile"
@@ -162,27 +129,9 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               className={styles.svg_icon}
             />
           </NextUILink>
-          <NextUILink
-            data-hide-on-theme="light"
-            isExternal
-            href="https://www.github.com/yerbaMatte"
-          >
-            <Image
-              src="/svg/github.svg"
-              alt="github profile"
-              width={24}
-              height={24}
-              style={{
-                filter: "invert(100%)",
-                maxWidth: "24px",
-              }}
-              className={styles.svg_icon}
-            />
-          </NextUILink>
         </li>
         <li className="h-6">
           <NextUILink
-            data-hide-on-theme="dark"
             isExternal
             href="http://discordapp.com/users/1028667497672609894"
           >
@@ -192,23 +141,6 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               width={24}
               height={24}
               style={{
-                maxWidth: "24px",
-              }}
-              className={styles.svg_icon}
-            />
-          </NextUILink>
-          <NextUILink
-            data-hide-on-theme="light"
-            isExternal
-            href="http://discordapp.com/users/1028667497672609894"
-          >
-            <Image
-              src="/svg/discord.svg"
-              alt="discord profile"
-              width={24}
-              height={24}
-              style={{
-                filter: "invert(100%)",
                 maxWidth: "24px",
               }}
               className={styles.svg_icon}

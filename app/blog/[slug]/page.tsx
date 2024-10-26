@@ -2,29 +2,31 @@ import { getBlogPost } from "@/lib/api/blogQueries";
 import { FeatureComponent } from "@/types/blog/featurePostTypes";
 import { apiFetch } from "@/lib/api/apiClient";
 import { CustomRenderer } from "@/components/blog/renderers/CustomRenderer";
+import { BlogDataResponse } from "@/types/blog/blogPostTypes";
+import { Divider } from "@nextui-org/react";
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
-  // TODO: correct the type
-  const response = await apiFetch<{ data: any[] }>(
-    `http://localhost:1337/api/posts?${getBlogPost(slug)}`
+  const response = await apiFetch<BlogDataResponse>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getBlogPost(slug)}`
   );
 
   const { data } = response;
 
   const blogData = data[0].content;
 
-  const { title } = data[0];
+  const { title, description } = data[0];
 
   return (
     <div className="container mx-auto grow">
-      <h2 className="text-h2 mt-8 text-center text-primary-500">{title}</h2>
-      <p className="mb-8 text-center">
-        Latest news, tips, updates, and stories for developers
-      </p>
       <div className="flex justify-center">
-        <div className="w-full max-w-[900px] prose prose-gray prose-lg">
+        <div className="w-full max-w-[900px] prose">
+          <h2 className="text-h2 mt-8 mb-2 text-center text-primary-500">
+            {title}
+          </h2>
+          <p className="mb-8 text-center text-sm">{description}</p>
+          <Divider />
           {blogData.map((c: FeatureComponent, i: number) => (
             <CustomRenderer item={c} key={i} />
           ))}
