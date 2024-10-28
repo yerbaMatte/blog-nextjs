@@ -5,6 +5,10 @@
 .title {
   @apply text-h2 text-primary-500;
   @apply leading-10;
+
+  &:hover {
+    @apply underline;
+  }
 }
 
 .time_tags_wrapper {
