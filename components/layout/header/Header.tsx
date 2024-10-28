@@ -25,8 +25,10 @@ export default function Header({ footer }: { footer: JSX.Element }) {
   const pathname = usePathname().slice(1);
   const menuItems = useMemo(() => ["Home", "Blog", "About", "Contact"], []);
 
-  const isTabActive = (item: string) =>
-    item === "Home" ? pathname === "" : item.toLowerCase() === pathname;
+  const isTabActive = (item: string) => {
+    if (item === "Home") return pathname === "";
+    return pathname.startsWith(item.toLowerCase());
+  };
 
   return (
     <Navbar
