@@ -1,10 +1,24 @@
-import { getBlogPost } from "@/lib/api/blogQueries";
+import { getAllPosts, getBlogPost } from "@/lib/api/blogQueries";
 import { FeatureComponent } from "@/types/blog/featurePostTypes";
 import { apiFetch } from "@/lib/api/apiClient";
 import { CustomRenderer } from "@/components/blog/renderers/CustomRenderer";
-import { BlogDataResponse } from "@/types/blog/blogPostTypes";
+import { BlogDataResponse, PostItemList } from "@/types/blog/blogPostTypes";
 import { notFound } from "next/navigation";
 import { Divider } from "@nextui-org/react";
+
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const response = await apiFetch<{ data: PostItemList[] }>(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`
+  );
+
+  const { data } = response;
+
+  return data.map((post) => ({
+    slug: post.slug,
+  }));
+}
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;

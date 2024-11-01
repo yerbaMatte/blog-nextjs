@@ -1,4 +1,5 @@
-import { Link as NextUILink, Button, Code } from "@nextui-org/react";
+// import { Link as NextUILink, Button, Code } from "@nextui-org/react";
+import { Button, Code } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeroComponent.module.scss";
@@ -21,15 +22,16 @@ const HeroComponent = () => {
           </h1>
           <p className="py-2 leading-7">
             <span className="font-bold">CODE BREW</span> by{" "}
-            <NextUILink
+            {/* <NextUILink
               href="/about"
               className="text-base font-bold p-0"
               as={Link}
-            >
+            > */}
+            <Link className="text-primary font-semibold" href="/about">
               @yerbaMatte
-            </NextUILink>{" "}
-            is a spot for devs looking to level up their productivity and get
-            their workflows tight.
+            </Link>{" "}
+            {/* </NextUILink>{" "} */} is a spot for devs looking to level up
+            their productivity and get their workflows tight.
           </p>
           <p className="py-2 leading-7">
             We dive into web dev and software engineering, sharing tips to help
@@ -76,6 +78,7 @@ const HeroComponent = () => {
           height: "400px",
         }}
         className={`hidden lg:block ${styles.hero}`}
+        priority
       />
     </div>
   );

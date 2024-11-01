@@ -62,13 +62,12 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               <h2 className="uppercase text-xl p-0">Code Brew</h2>
               <p className="text-xs">
                 <span>by </span>
-                <NextUILink
+                <Link
                   href="/about"
-                  className="text-base font-bold p-0"
-                  as={Link}
+                  className="text-base text-primary font-bold p-0"
                 >
                   @yerbaMatte
-                </NextUILink>
+                </Link>
               </p>
             </div>
           </NavbarBrand>
