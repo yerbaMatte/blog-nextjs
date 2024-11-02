@@ -1,21 +1,23 @@
 import { getAllPosts, getBlogPost } from "@/lib/api/blogQueries";
 import { FeatureComponent } from "@/types/blog/featurePostTypes";
-import { apiFetch } from "@/lib/api/apiClient";
 import { CustomRenderer } from "@/components/blog/renderers/CustomRenderer";
-import { BlogDataResponse, PostItemList } from "@/types/blog/blogPostTypes";
+import { BlogDataResponse, BlogPost } from "@/types/blog/blogPostTypes";
 import { notFound } from "next/navigation";
 import { Divider } from "@nextui-org/react";
 
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const response = await apiFetch<{ data: PostItemList[] }>(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`,
+    { cache: "no-store" }
   );
 
-  const { data } = response;
+  const json: BlogDataResponse = await response.json();
 
-  return data.map((post) => ({
+  const { data } = json;
+
+  return data.map((post: BlogPost) => ({
     slug: post.slug,
   }));
 }
@@ -24,11 +26,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
   try {
-    const response = await apiFetch<BlogDataResponse>(
+    const response = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getBlogPost(slug)}`
     );
 
-    const { data } = response;
+    const json: BlogDataResponse = await response.json();
+
+    const { data } = json;
 
     if (!data || data.length === 0) return notFound();
 
@@ -48,9 +52,6 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
               <CustomRenderer item={c} key={i} />
             ))}
           </div>
-          {/* <aside className="grow">
-            <LastCreatedPosts />
-          </aside> */}
         </div>
       </div>
     );

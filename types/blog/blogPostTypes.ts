@@ -1,4 +1,4 @@
-export type PostItemList = {
+export type BlogPostItemList = {
   title: string;
   description: string;
   publishedAt: string;
@@ -17,6 +17,7 @@ export type BlogPost = {
   updatedAt: string;
   publishedAt: string;
   content: any[];
+  tags: { title: string }[];
 };
 
 export type PaginationMeta = {

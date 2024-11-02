@@ -1,7 +1,7 @@
 import styles from "./PostItem.module.scss";
 import { Chip } from "@nextui-org/react";
 import Link from "next/link";
-import { PostItemList } from "@/types/blog/blogPostTypes";
+import { BlogPostItemList } from "@/types/blog/blogPostTypes";
 
 const PostItem = ({
   title,
@@ -9,7 +9,7 @@ const PostItem = ({
   tags,
   slug,
   publishedAt,
-}: PostItemList) => {
+}: BlogPostItemList) => {
   const formattedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

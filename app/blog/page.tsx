@@ -1,13 +1,17 @@
 import { Divider } from "@nextui-org/react";
 import PostItem from "@/components/blog/post_item/PostItem";
-import { PostItemList } from "@/types/blog/blogPostTypes";
+import { BlogDataResponse, BlogPostItemList } from "@/types/blog/blogPostTypes";
 import { getAllPosts } from "@/lib/api/blogQueries";
-import { apiFetch } from "@/lib/api/apiClient";
 
 const BlogPage = async () => {
-  const data = await apiFetch<{ data: PostItemList[] }>(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`,
+    { cache: "no-store" }
   );
+
+  const json: BlogDataResponse = await response.json();
+
+  const { data } = json;
 
   return (
     <div className="container mx-auto grow">
@@ -19,7 +23,7 @@ const BlogPage = async () => {
         <div className="w-full max-w-[900px]">
           <ul>
             <Divider />
-            {data.data.map((p: PostItemList) => (
+            {data.map((p: BlogPostItemList) => (
               <li key={p.documentId}>
                 <PostItem
                   title={p.title}
@@ -33,9 +37,6 @@ const BlogPage = async () => {
             ))}
           </ul>
         </div>
-        {/* <aside className="grow">
-          <LastCreatedPosts />
-        </aside> */}
       </div>
     </div>
   );
