@@ -1,6 +1,7 @@
 import qs from "qs";
 
 export const getAllPosts = qs.stringify({
+  sort: ["publishedAt:desc"],
   populate: {
     tags: {
       fields: ["title", "id"],
@@ -13,7 +14,6 @@ export const getBlogPost = (slug: string) =>
     filters: {
       slug,
     },
-    sort: ["publishedAt"],
     populate: {
       content: {
         populate: "*",
