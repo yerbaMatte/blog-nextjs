@@ -32,7 +32,7 @@ export default function RootLayout({
           <main className="flex flex-col min-h-screen">
             <Header footer={<Footer />} />
             <Divider />
-            <section className="grow flex flex-col justify-center">
+            <section className="grow flex flex-col justify-center items-center">
               {children}
             </section>
             <Divider />

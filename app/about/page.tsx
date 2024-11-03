@@ -17,7 +17,7 @@ const AboutPage = () => {
         <Divider />
       </div>
       <div className="container flex flex-col items-center justify-center md:flex-row md:gap-x-8 lg:gap-x-16 mt-2 px-0 grow">
-        <div className="min-w-[250px] mb-6">
+        <div className="min-w-[250px] my-4">
           <Image
             alt="profile image"
             src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/profile_img_5a3ee5f766.webp`}

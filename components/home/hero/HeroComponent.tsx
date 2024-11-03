@@ -65,8 +65,8 @@ const HeroComponent = () => {
       <Image
         // data-hide-on-theme="dark"
         src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/hero_background_e71bd77857.webp`}
-        width={400}
-        height={400}
+        width={300}
+        height={300}
         alt="black/white hero"
         style={{
           objectFit: "contain",
@@ -74,8 +74,8 @@ const HeroComponent = () => {
           top: "50%",
           left: "75%",
           transform: "translate(-30%, -50%) scaleX(-1)",
-          width: "400px",
-          height: "400px",
+          width: "300px",
+          height: "300px",
         }}
         className={`hidden lg:block ${styles.hero}`}
         priority
