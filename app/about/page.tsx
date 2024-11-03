@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { Divider } from "@nextui-org/react";
 
+//TODO:
+//1/ change blog posts displaying newset-oldest
+//2/ change next images - avoid layout shift
+//3/ thumbnails in blog posts when posting on SM?
+
 const AboutPage = () => {
   return (
     <div className="flex flex-col items-center w-full grow">
@@ -11,21 +16,18 @@ const AboutPage = () => {
         </p>
         <Divider />
       </div>
-      <div className="container flex flex-col items-center justify-center md:flex-row md:gap-x-8 lg:gap-x-16 mt-6 px-0 grow">
-        <div className="flex flex-col items-center">
-          <div className="w-72 md:w-80">
-            <Image
-              alt="profile image"
-              src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/profile_img_5a3ee5f766.webp`}
-              className="w-full h-auto rounded-full"
-              style={{ objectFit: "contain" }}
-              quality={100}
-              priority
-              width={0}
-              height={0}
-              sizes="100vw"
-            />
-          </div>
+      <div className="container flex flex-col items-center justify-center md:flex-row md:gap-x-8 lg:gap-x-16 mt-2 px-0 grow">
+        <div className="min-w-[250px] mb-6">
+          <Image
+            alt="profile image"
+            src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/profile_img_5a3ee5f766.webp`}
+            className="w-full h-auto rounded-full"
+            style={{ objectFit: "contain" }}
+            quality={100}
+            priority
+            width={250}
+            height={250}
+          />
         </div>
         <div className="max-w-[600px] max-h-fit px-4 md:px-2">
           <p className="py-2 text-justify">
