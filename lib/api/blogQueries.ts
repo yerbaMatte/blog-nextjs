@@ -13,6 +13,7 @@ export const getBlogPost = (slug: string) =>
     filters: {
       slug,
     },
+    sort: ["publishedAt"],
     populate: {
       content: {
         populate: "*",

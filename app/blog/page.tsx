@@ -23,21 +23,18 @@ const BlogPage = async () => {
         <div className="w-full max-w-[900px]">
           <ul>
             <Divider />
-            {data
-              .slice()
-              .reverse()
-              .map((p: BlogPostItemList) => (
-                <li key={p.documentId}>
-                  <PostItem
-                    title={p.title}
-                    description={p.description}
-                    tags={p.tags}
-                    publishedAt={p.publishedAt}
-                    slug={p.slug}
-                  />
-                  <Divider />
-                </li>
-              ))}
+            {data.map((p: BlogPostItemList) => (
+              <li key={p.documentId}>
+                <PostItem
+                  title={p.title}
+                  description={p.description}
+                  tags={p.tags}
+                  publishedAt={p.publishedAt}
+                  slug={p.slug}
+                />
+                <Divider />
+              </li>
+            ))}
           </ul>
         </div>
       </div>
