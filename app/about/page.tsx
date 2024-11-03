@@ -3,7 +3,6 @@ import { Divider } from "@nextui-org/react";
 
 //TODO:
 //1/ change blog posts displaying newset-oldest
-//2/ change next images - avoid layout shift
 //3/ thumbnails in blog posts when posting on SM?
 
 const AboutPage = () => {
