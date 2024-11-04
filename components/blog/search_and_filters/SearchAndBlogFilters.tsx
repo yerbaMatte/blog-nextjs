@@ -14,8 +14,6 @@ const SearchAndBlogFilters = async () => {
 
   const { data } = json;
 
-  console.log(data);
-
   return (
     <div className="my-6">
       <Input
@@ -29,7 +27,7 @@ const SearchAndBlogFilters = async () => {
           input: ["placeholder:text-sm"],
         }}
       />
-      {data.map((tag: { title: string; posts: Object[] }, index: number) => (
+      {data.map((tag: { title: string; posts: object[] }, index: number) => (
         <Tag isFilter title={tag.title} key={index} amount={tag.posts.length} />
       ))}
     </div>

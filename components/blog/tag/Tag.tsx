@@ -11,7 +11,7 @@ type TagType = {
 const Tag = ({ title, amount, isFilter }: TagType) => {
   const BasicTag = ({ name }: { name: string }) => (
     <Chip className={styles.chip} size="md">
-      {title}
+      {name}
     </Chip>
   );
 
