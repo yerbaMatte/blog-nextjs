@@ -1,29 +1,18 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 
 export default function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
 
-  const changeThemeValue = theme === "dark" ? "light" : "dark";
+  useEffect(() => setMounted(true), []);
 
-  return (
-    <div className="flex gap-4 cursor-pointer">
+  if (!mounted)
+    return (
       <Image
-        data-hide-on-theme="dark"
-        src={`/svg/dark.svg`}
-        alt={`dark mode icon`}
-        width={24}
-        height={24}
-        style={{
-          maxWidth: "24px",
-        }}
-        onClick={() => setTheme(changeThemeValue)}
-        loading="lazy"
-      />
-      <Image
-        data-hide-on-theme="light"
         src={`/svg/light.svg`}
         alt={`light mode icon`}
         width={24}
@@ -31,10 +20,45 @@ export default function ThemeSwitcher() {
         style={{
           filter: "invert(100%)",
           maxWidth: "24px",
+          cursor: "pointer",
         }}
-        onClick={() => setTheme(changeThemeValue)}
-        loading="lazy"
+        onClick={() => setTheme("light")}
+        priority
       />
-    </div>
-  );
+    );
+
+  if (resolvedTheme === "dark") {
+    return (
+      <Image
+        src={`/svg/light.svg`}
+        alt={`light mode icon`}
+        width={24}
+        height={24}
+        style={{
+          filter: "invert(100%)",
+          maxWidth: "24px",
+          cursor: "pointer",
+        }}
+        onClick={() => setTheme("light")}
+        priority
+      />
+    );
+  }
+
+  if (resolvedTheme === "light") {
+    return (
+      <Image
+        src={`/svg/dark.svg`}
+        alt={`dark mode icon`}
+        width={24}
+        height={24}
+        style={{
+          maxWidth: "24px",
+          cursor: "pointer",
+        }}
+        onClick={() => setTheme("dark")}
+        priority
+      />
+    );
+  }
 }
