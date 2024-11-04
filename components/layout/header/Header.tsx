@@ -174,6 +174,18 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               </NextUILink>
             </NavbarMenuItem>
           ))}
+          <NavbarMenuItem>
+            <NextUILink
+              color="foreground"
+              className="text-2xl"
+              isExternal
+              showAnchorIcon
+              href={`/api/resume`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              Resume
+            </NextUILink>
+          </NavbarMenuItem>
         </ul>
         <li>{footer}</li>
       </NavbarMenu>
