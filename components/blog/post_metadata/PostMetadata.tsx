@@ -21,7 +21,7 @@ const PostMetadata = ({
       <time className={styles.time}>{publishedAt}</time>
       <div>
         {tags.map((t, i) => (
-          <Tag tag={t} key={i} />
+          <Tag title={t.title} key={i} />
         ))}
       </div>
     </div>
