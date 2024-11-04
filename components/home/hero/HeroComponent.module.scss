@@ -1,7 +1,6 @@
 .hero_layout {
   @apply container;
   @apply flex items-center justify-start relative;
-  height: calc(100vh - 136px);
 
   .hero_description {
     @apply flex flex-col h-full justify-center gap-y-2 md:gap-y-8 px-2 md:px-0;
