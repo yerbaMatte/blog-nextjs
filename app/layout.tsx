@@ -3,11 +3,12 @@ import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { Divider } from "@nextui-org/react";
 
-import Providers from "./providers";
+import Providers from "./Providers";
 import "./globals.css";
 
 const Footer = dynamic(() => import("../components/layout/footer/Footer"));
 import Header from "../components/layout/header/Header";
+import ScrollFix from "./ScrollFix";
 
 export const metadata: Metadata = {
   title: "Code Brew by yerbaMatte",
@@ -27,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en" className={openSans.className}>
+      <ScrollFix />
       <body>
         <Providers>
           <main className="flex flex-col min-h-screen">
