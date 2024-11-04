@@ -4,6 +4,8 @@ import { CustomRenderer } from "@/components/blog/renderers/CustomRenderer";
 import { BlogDataResponse, BlogPost } from "@/types/blog/blogPostTypes";
 import { notFound } from "next/navigation";
 import { Divider } from "@nextui-org/react";
+import PostMetadata from "@/components/blog/post_metadata/PostMetadata";
+import { formatDate } from "@/utils/formatDate";
 
 export const dynamicParams = true;
 
@@ -37,7 +39,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     if (!data || data.length === 0) return notFound();
 
     const blogData = data[0].content;
-    const { title, description } = data[0];
+    const { title, description, tags, publishedAt } = data[0];
 
     return (
       <div className="container mx-auto grow">
@@ -47,6 +49,11 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
               {title}
             </h2>
             <p className="mb-8 text-center text-sm">{description}</p>
+            <PostMetadata
+              isBlogList
+              publishedAt={formatDate(publishedAt)}
+              tags={tags}
+            />
             <Divider />
             {blogData.map((c: FeatureComponent, i: number) => (
               <CustomRenderer item={c} key={i} />

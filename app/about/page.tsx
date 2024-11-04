@@ -1,10 +1,6 @@
 import Image from "next/image";
 import { Divider } from "@nextui-org/react";
 
-//TODO:
-//1/ change blog posts displaying newset-oldest
-//3/ thumbnails in blog posts when posting on SM?
-
 const AboutPage = () => {
   return (
     <div className="flex flex-col items-center w-full grow">

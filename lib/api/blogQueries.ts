@@ -18,5 +18,8 @@ export const getBlogPost = (slug: string) =>
       content: {
         populate: "*",
       },
+      tags: {
+        fields: ["title", "id"],
+      },
     },
   });
