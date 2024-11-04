@@ -9,6 +9,14 @@ export const getAllPosts = qs.stringify({
   },
 });
 
+export const getAllTags = qs.stringify({
+  populate: {
+    posts: {
+      fields: ["title"],
+    },
+  },
+});
+
 export const getBlogPost = (slug: string) =>
   qs.stringify({
     filters: {

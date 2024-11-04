@@ -1,5 +1,5 @@
 import styles from "./PostMetadata.module.scss";
-import { Chip } from "@nextui-org/react";
+import Tag from "../tag/Tag";
 
 type PostMetadataType = {
   publishedAt: string;
@@ -15,15 +15,13 @@ const PostMetadata = ({
   return (
     <div
       className={`${styles.time_tags_wrapper} ${
-        isBlogList ? "!justify-between" : "items-center"
+        isBlogList ? "items-center" : "justify-between"
       }`}
     >
       <time className={styles.time}>{publishedAt}</time>
       <div>
         {tags.map((t, i) => (
-          <Chip className={styles.chip} size="md" key={i}>
-            {t.title}
-          </Chip>
+          <Tag tag={t} key={i} />
         ))}
       </div>
     </div>

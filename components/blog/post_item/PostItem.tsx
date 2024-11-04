@@ -16,7 +16,11 @@ const PostItem = ({
       <Link href={`/blog/${slug}`}>
         <h2 className={styles.title}>{title}</h2>
       </Link>
-      <PostItemMetadata publishedAt={formatDate(publishedAt)} tags={tags} />
+      <PostItemMetadata
+        isBlogList
+        publishedAt={formatDate(publishedAt)}
+        tags={tags}
+      />
       <p>{description}</p>
     </div>
   );

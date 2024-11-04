@@ -1,0 +1,12 @@
+.chip {
+  @apply px-2 py-1 mr-1;
+  @apply bg-graish;
+  @apply border border-divider;
+}
+
+[data-theme="light"] {
+  .chip {
+    @apply bg-transparent;
+    @apply border-gray-300 border-1;
+  }
+}

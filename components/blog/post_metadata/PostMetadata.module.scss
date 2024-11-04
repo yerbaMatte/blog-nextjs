@@ -1,21 +1,8 @@
 .time_tags_wrapper {
-  @apply flex flex-col sm:flex-row justify-start;
+  @apply flex flex-col sm:flex-row justify-start items-start sm:items-center;
   @apply my-2 gap-2;
 
   .time {
     @apply text-[#818A91];
-  }
-
-  .chip {
-    @apply px-2 py-1 mr-1;
-    @apply bg-graish;
-    @apply border border-divider;
-  }
-}
-
-[data-theme="light"] {
-  .chip {
-    @apply bg-transparent;
-    @apply border-gray-300 border-1;
   }
 }

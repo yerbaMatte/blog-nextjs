@@ -1,5 +1,6 @@
 "use client";
 
+import styles from "./ContactForm.module.scss";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
@@ -64,21 +65,11 @@ const ContactForm = () => {
         <Divider />
         <CardHeader className="flex">
           <Image
-            data-hide-on-theme="light"
             src="svg/mate.svg"
             alt="yerba mate drink"
             width={32}
             height={32}
-            style={{
-              filter: "invert(100%)",
-            }}
-          />
-          <Image
-            data-hide-on-theme="dark"
-            src="svg/mate.svg"
-            alt="yerba mate drink"
-            width={32}
-            height={32}
+            className={styles.mate}
           />
           <p className="text-lg ml-2 py-4">Fill out the form below!</p>
         </CardHeader>

@@ -2,6 +2,7 @@ import { Divider } from "@nextui-org/react";
 import PostItem from "@/components/blog/post_item/PostItem";
 import { BlogDataResponse, BlogPostItemList } from "@/types/blog/blogPostTypes";
 import { getAllPosts } from "@/lib/api/blogQueries";
+import SearchAndBlogFilters from "@/components/blog/search_and_filters/SearchAndBlogFilters";
 
 const BlogPage = async () => {
   const response = await fetch(
@@ -22,6 +23,8 @@ const BlogPage = async () => {
       <div className="flex justify-center">
         <div className="w-full max-w-[900px]">
           <ul>
+            <Divider />
+            <SearchAndBlogFilters />
             <Divider />
             {data.map((p: BlogPostItemList) => (
               <li key={p.documentId}>

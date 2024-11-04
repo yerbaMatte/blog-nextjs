@@ -92,7 +92,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             className="md:text-lg"
             isExternal
             showAnchorIcon
-            href={`${process.env.NEXT_PUBLIC_API_URL}/uploads/ENG_Milosz_Lewandowski_Frontend_Developer_resume_b44707c392.pdf`}
+            href={`/api/resume`}
           >
             Resume
           </NextUILink>
