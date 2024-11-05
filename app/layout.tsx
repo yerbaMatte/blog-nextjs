@@ -27,11 +27,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html suppressHydrationWarning lang="en" className={openSans.className}>
+    <html
+      content="user-scalable=no"
+      suppressHydrationWarning
+      lang="en"
+      className={openSans.className}
+    >
       <ScrollFix />
       <body>
         <Providers>
           <main className="flex flex-col min-h-screen">
+            <div className="scroll-top-anchor" />
             <Header footer={<Footer />} />
             <Divider />
             <section className="grow flex flex-col justify-center items-center">
