@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
+    "@next/bundle-analyzer": "^15.0.2",
     "@nextui-org/navbar": "^2.0.37",
     "@nextui-org/react": "^2.4.8",
     "@strapi/blocks-react-renderer": "^1.0.1",
