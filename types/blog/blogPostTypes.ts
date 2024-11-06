@@ -1,7 +1,8 @@
 export type BlogPostItemList = {
   title: string;
   description: string;
-  publishedAt: string;
+  createdAt: string;
+  updatedAt: string;
   documentId?: string;
   tags: { title: string }[];
   slug: string;

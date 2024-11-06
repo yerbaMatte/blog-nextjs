@@ -1,16 +1,14 @@
 import Image from "next/image";
 import { Divider } from "@nextui-org/react";
+import TitleSection from "@/components/ui/title-section/TitleSection";
 
 const AboutPage = () => {
   return (
-    <div className="flex flex-col items-center w-full grow">
-      <div>
-        <h2 className="text-h2 mt-8 text-center">About</h2>
-        <p className="text-center mb-8">
-          Hey there! 👋🏽 I&apos;m your host, Miłosz - a Polish software engineer
-        </p>
-        <Divider />
-      </div>
+    <div className="flex flex-col items-center w-full grow max-w-[900px]">
+      <TitleSection title="About" className="my-8">
+        Hey there! 👋🏽 I&apos;m your host, Miłosz - a Polish software engineer
+      </TitleSection>
+      <Divider />
       <div className="container flex flex-col items-center justify-center md:flex-row md:gap-x-8 lg:gap-x-16 mt-2 px-0 grow">
         <div className="min-w-[250px] my-4">
           <Image

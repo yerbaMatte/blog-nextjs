@@ -3,6 +3,7 @@ import PostItem from "@/components/blog/post_item/PostItem";
 import { BlogDataResponse, BlogPostItemList } from "@/types/blog/blogPostTypes";
 import { getAllPosts } from "@/lib/api/blogQueries";
 import SearchAndBlogFilters from "@/components/blog/search_and_filters/SearchAndBlogFilters";
+import TitleSection from "@/components/ui/title-section/TitleSection";
 
 const BlogPage = async () => {
   const response = await fetch(
@@ -16,12 +17,11 @@ const BlogPage = async () => {
 
   return (
     <div className="container mx-auto grow">
-      <h2 className="text-h2 mt-8 text-center">Blog</h2>
-      <p className="mb-8 text-center">
-        Latest news, tips, updates, and stories for developers
-      </p>
       <div className="flex justify-center">
         <div className="w-full max-w-[900px]">
+          <TitleSection className="my-8" title="Blog">
+            Latest news, tips, updates, and stories for developers
+          </TitleSection>
           <ul>
             <Divider />
             <SearchAndBlogFilters />
@@ -32,7 +32,8 @@ const BlogPage = async () => {
                   title={p.title}
                   description={p.description}
                   tags={p.tags}
-                  publishedAt={p.publishedAt}
+                  createdAt={p.createdAt}
+                  updatedAt={p.updatedAt}
                   slug={p.slug}
                 />
                 <Divider />

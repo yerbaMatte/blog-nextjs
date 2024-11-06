@@ -13,7 +13,7 @@ import {
 } from "@nextui-org/react";
 
 import Link from "next/link";
-import ThemeSwitcher from "../ThemeSwitcher";
+import ThemeSwitcher from "./ThemeSwitcher";
 import { item, menu, menuItem, wrapper } from "./headerSlots";
 
 import { useMemo, useState } from "react";
