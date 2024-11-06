@@ -1,4 +1,4 @@
-import { Divider, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
 
 import TitleSection from "@/components/ui/title-section/TitleSection";
 import ContactForm from "@/components/contact/contact_form/ContactForm";
