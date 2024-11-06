@@ -7,7 +7,7 @@ const ContactPage = () => {
   return (
     <div className="container mx-auto grow">
       <div className="flex justify-center">
-        <div className="w-full max-w-[900px]">
+        <div className="w-full max-w-[900px] flex flex-col items-center">
           <TitleSection title="Contact" className="my-8">
             You can also shoot me an email directly on:{" "}
             <Link
