@@ -9,7 +9,8 @@ const PostItem = ({
   description,
   tags,
   slug,
-  publishedAt,
+  createdAt,
+  updatedAt,
 }: BlogPostItemList) => {
   return (
     <div className={styles.post_item}>
@@ -18,7 +19,8 @@ const PostItem = ({
       </Link>
       <PostItemMetadata
         isBlogList
-        publishedAt={formatDate(publishedAt)}
+        createdAt={formatDate(createdAt)}
+        updatedAt={formatDate(updatedAt)}
         tags={tags}
       />
       <p>{description}</p>

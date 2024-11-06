@@ -39,7 +39,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
     if (!data || data.length === 0) return notFound();
 
     const blogData = data[0].content;
-    const { title, description, tags, publishedAt } = data[0];
+    const { title, description, tags, updatedAt, createdAt } = data[0];
 
     return (
       <div className="container mx-auto grow">
@@ -50,8 +50,8 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             </h2>
             <p className="mb-8 text-center text-sm">{description}</p>
             <PostMetadata
-              isBlogList
-              publishedAt={formatDate(publishedAt)}
+              createdAt={formatDate(createdAt)}
+              updatedAt={formatDate(updatedAt)}
               tags={tags}
             />
             <Divider />

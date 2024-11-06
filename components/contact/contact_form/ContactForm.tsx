@@ -6,7 +6,6 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { ContactFormData } from "@/types/contact/contactFormTypes";
 import FormField from "./FormField";
-
 import {
   Card,
   CardHeader,
@@ -25,7 +24,11 @@ const inputWrapperSlot = {
   inputWrapper: ["border-[1px], border-divider"],
 };
 
-const ContactForm = () => {
+type ContactFormProps = {
+  className?: string;
+};
+
+const ContactForm = ({ className = "" }: ContactFormProps) => {
   const [showPopover, setShowPopover] = useState(false);
 
   const {
@@ -50,7 +53,7 @@ const ContactForm = () => {
         setShowPopover(true);
         setTimeout(() => {
           setShowPopover(false);
-        }, 3000); //
+        }, 3000);
       } else {
         console.error("Error sending email:", response.statusText);
       }
@@ -60,9 +63,11 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="my-8 w-full max-w-[800px] shadow-none bg-background grow">
+    <Card
+      className={`w-full max-w-[800px] shadow-none bg-background ${className}`}
+    >
+      <Divider />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Divider />
         <CardHeader className="flex">
           <Image
             src="svg/mate.svg"
