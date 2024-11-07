@@ -21,6 +21,22 @@ export type BlogPost = {
   tags: { title: string }[];
 };
 
+export type TagType = {
+  title: string;
+  amount?: number;
+  isFilter?: boolean;
+};
+
+export type TagResponseType = {
+  id?: number;
+  documentId?: string;
+  title: string;
+  createdAt?: string;
+  updatedAt?: string;
+  publishedAt?: string;
+  posts?: object[];
+};
+
 export type PaginationMeta = {
   page: number;
   pageSize: number;

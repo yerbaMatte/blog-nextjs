@@ -1,12 +1,26 @@
 .chip {
   @apply px-2 py-1 mr-1;
-  @apply bg-graish;
   @apply border border-divider;
+  @apply cursor-pointer;
 }
 
 [data-theme="light"] {
   .chip {
     @apply bg-transparent;
     @apply border-gray-300 border-1;
+  }
+
+  .chip_selected {
+    border-color: var(--text-primary-500);
+  }
+}
+
+[data-theme="dark"] {
+  .chip {
+    @apply bg-graish;
+  }
+
+  .chip_selected {
+    border-color: var(--text-primary-500);
   }
 }

@@ -1,0 +1,61 @@
+"use client";
+
+import SearchAndBlogFilters from "@/components/blog/search_and_filters/SearchAndBlogFilters";
+import PostList from "@/components/blog/post_list/PostList";
+import { BlogPostItemList } from "@/types/blog/blogPostTypes";
+import { Divider } from "@nextui-org/react";
+import { useState, useEffect } from "react";
+
+type BlogSectionProps = {
+  blogList: BlogPostItemList[];
+  tagList: { title: string }[];
+};
+
+const BlogSection = ({ blogList, tagList }: BlogSectionProps) => {
+  const [selectedPosts, setSelectedPosts] =
+    useState<BlogPostItemList[]>(blogList);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
+
+  useEffect(() => {
+    const filteredPosts = blogList.filter((post) => {
+      const matchesSearchTerm =
+        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        post.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+      const matchesSelectedFilters =
+        selectedFilters.length === 0 ||
+        post.tags.some((tag) => selectedFilters.includes(tag.title));
+
+      return matchesSearchTerm && matchesSelectedFilters;
+    });
+
+    setSelectedPosts(filteredPosts);
+  }, [searchTerm, selectedFilters, blogList]);
+
+  const toggleFilter = (tag: string) => {
+    setSelectedFilters((prevFilters) =>
+      prevFilters.includes(tag)
+        ? prevFilters.filter((f) => f !== tag)
+        : [...prevFilters, tag]
+    );
+  };
+
+  console.log(selectedFilters);
+
+  return (
+    <>
+      <SearchAndBlogFilters
+        onSearch={(term) => setSearchTerm(term)}
+        value={searchTerm}
+        tags={tagList}
+        selectedFilters={selectedFilters}
+        toggleFilter={toggleFilter}
+      />
+      <Divider />
+      <PostList blogList={selectedPosts} />
+    </>
+  );
+};
+
+export default BlogSection;

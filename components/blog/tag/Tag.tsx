@@ -2,15 +2,29 @@ import styles from "./Tag.module.scss";
 import { Chip } from "@nextui-org/react";
 import { Badge } from "@nextui-org/badge";
 
-type TagType = {
+type TagProps = {
   title: string;
+  isSelected?: boolean;
   amount?: number;
   isFilter?: boolean;
+  onClick?: () => void;
 };
 
-const Tag = ({ title, amount, isFilter }: TagType) => {
-  const BasicTag = ({ name }: { name: string }) => (
-    <Chip className={styles.chip} size="md">
+const Tag = ({ title, amount, isFilter, isSelected, onClick }: TagProps) => {
+  const BasicTag = ({
+    name,
+    onClick,
+    isSelected,
+  }: {
+    name: string;
+    onClick?: () => void;
+    isSelected?: boolean;
+  }) => (
+    <Chip
+      onClick={onClick}
+      className={`${styles.chip} ${isSelected ? styles.chip_selected : ""}`}
+      size="md"
+    >
       {name}
     </Chip>
   );
@@ -30,10 +44,10 @@ const Tag = ({ title, amount, isFilter }: TagType) => {
         ],
       }}
     >
-      <BasicTag name={title} />
+      <BasicTag name={title} onClick={onClick} isSelected={isSelected} />
     </Badge>
   ) : (
-    <BasicTag name={title} />
+    <BasicTag name={title} onClick={onClick} isSelected={isSelected} />
   );
 };
 
