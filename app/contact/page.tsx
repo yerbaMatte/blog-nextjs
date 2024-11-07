@@ -5,8 +5,8 @@ import ContactForm from "@/components/contact/contact_form/ContactForm";
 
 const ContactPage = () => {
   return (
-    <div className="container mx-auto grow">
-      <div className="flex justify-center">
+    <div className="container mx-auto grow flex flex-col">
+      <div className="flex justify-center grow">
         <div className="w-full max-w-[900px] flex flex-col items-center">
           <TitleSection title="Contact" className="my-8">
             You can also shoot me an email directly on:{" "}
@@ -17,7 +17,7 @@ const ContactPage = () => {
               milosz1lewandowski@gmail.com
             </Link>
           </TitleSection>
-          <ContactForm className="flex-grow justify-start" />
+          <ContactForm className="flex-grow justify-center" />
         </div>
       </div>
     </div>
