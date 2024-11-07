@@ -1,9 +1,9 @@
 import { Divider } from "@nextui-org/react";
-import PostItem from "@/components/blog/post_item/PostItem";
-import { BlogDataResponse, BlogPostItemList } from "@/types/blog/blogPostTypes";
+import { BlogDataResponse } from "@/types/blog/blogPostTypes";
 import { getAllPosts } from "@/lib/api/blogQueries";
 import SearchAndBlogFilters from "@/components/blog/search_and_filters/SearchAndBlogFilters";
 import TitleSection from "@/components/ui/title-section/TitleSection";
+import PostList from "@/components/blog/post_list/PostList";
 
 const BlogPage = async () => {
   const response = await fetch(
@@ -22,24 +22,10 @@ const BlogPage = async () => {
           <TitleSection className="my-8" title="Blog">
             Latest news, tips, updates, and stories for developers
           </TitleSection>
-          <ul>
-            <Divider />
-            <SearchAndBlogFilters />
-            <Divider />
-            {data.map((p: BlogPostItemList) => (
-              <li key={p.documentId}>
-                <PostItem
-                  title={p.title}
-                  description={p.description}
-                  tags={p.tags}
-                  createdAt={p.createdAt}
-                  updatedAt={p.updatedAt}
-                  slug={p.slug}
-                />
-                <Divider />
-              </li>
-            ))}
-          </ul>
+          <Divider />
+          <SearchAndBlogFilters />
+          <Divider />
+          <PostList blogList={data} />
         </div>
       </div>
     </div>

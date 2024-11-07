@@ -22,10 +22,15 @@ const PostMetadata = ({
         isBlogList ? "items-center" : styles.justify_between
       }`}
     >
-      {isPostUpdated && <time className={styles.time}>{updatedAt}</time>}
-
-      {isBlogList && (
-        <time className={`${styles.time} line-through`}>{createdAt}</time>
+      {isPostUpdated ? (
+        <>
+          {isPostUpdated && <time className={styles.time}>{updatedAt}</time>}
+          {isBlogList && (
+            <time className={`${styles.time} line-through`}>{createdAt}</time>
+          )}
+        </>
+      ) : (
+        <time className={styles.time}>{updatedAt}</time>
       )}
 
       <div>
