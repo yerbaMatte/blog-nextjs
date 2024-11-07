@@ -11,7 +11,6 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  Divider,
   Image,
   Button,
   Popover,
@@ -66,7 +65,6 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
     <Card
       className={`w-full max-w-[800px] shadow-none bg-background ${className}`}
     >
-      <Divider />
       <form onSubmit={handleSubmit(onSubmit)}>
         <CardHeader className="flex">
           <Image

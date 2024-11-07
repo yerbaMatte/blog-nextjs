@@ -1,4 +1,4 @@
-import { Link } from "@nextui-org/react";
+import { Divider, Link } from "@nextui-org/react";
 
 import TitleSection from "@/components/ui/title-section/TitleSection";
 import ContactForm from "@/components/contact/contact_form/ContactForm";
@@ -17,6 +17,7 @@ const ContactPage = () => {
               milosz1lewandowski@gmail.com
             </Link>
           </TitleSection>
+          <Divider />
           <ContactForm className="flex-grow justify-center" />
         </div>
       </div>
