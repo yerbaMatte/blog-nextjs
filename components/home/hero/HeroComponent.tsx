@@ -33,7 +33,7 @@ const HeroComponent = () => {
             you code smarter, not harder.
           </p>
         </div>
-        <div className="md:w-3/4 lg:w-2/3 gap-x-4">
+        <div className="md:w-2/3 lg:w-1/2">
           <NewsletterBanner />
         </div>
       </div>

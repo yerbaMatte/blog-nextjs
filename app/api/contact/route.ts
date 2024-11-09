@@ -1,4 +1,4 @@
-import { ApplicationSchema } from "@/types/contact/contactFormSchema";
+import { ContactSchema } from "@/types/contact/contactFormSchema";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
@@ -9,7 +9,7 @@ const privateEmail = process.env.GMAIL_EMAIL;
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const result = ApplicationSchema.safeParse(body);
+    const result = ContactSchema.safeParse(body);
 
     if (!result.success) {
       const serverErrors = Object.fromEntries(

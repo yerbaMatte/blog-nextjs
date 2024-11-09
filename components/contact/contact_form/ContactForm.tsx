@@ -17,7 +17,7 @@ import {
   PopoverTrigger,
   PopoverContent,
 } from "@nextui-org/react";
-import { ApplicationSchema } from "@/types/contact/contactFormSchema";
+import { ContactSchema } from "@/types/contact/contactFormSchema";
 
 const inputWrapperSlot = {
   inputWrapper: ["border-[1px], border-divider"],
@@ -36,7 +36,7 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(ApplicationSchema),
+    resolver: zodResolver(ContactSchema),
   });
 
   const onSubmit = async (data: ContactFormData) => {
@@ -81,14 +81,18 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
             type="name"
             label="Name"
             name="name"
+            fieldType="input"
             register={register}
             error={errors.name}
+            variant="bordered"
             classNames={inputWrapperSlot}
           />
           <FormField
             type="email"
             label="Email"
             name="email"
+            fieldType="input"
+            variant="bordered"
             register={register}
             error={errors.email}
             classNames={inputWrapperSlot}
@@ -97,6 +101,8 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
             type="subject"
             label="Subject"
             name="subject"
+            fieldType="input"
+            variant="bordered"
             register={register}
             error={errors.subject}
             classNames={inputWrapperSlot}
@@ -105,10 +111,11 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
             type="message"
             label="Message"
             name="message"
+            variant="bordered"
             register={register}
             error={errors.message}
             classNames={inputWrapperSlot}
-            isTextArea
+            fieldType="textarea"
           />
         </CardBody>
         <CardFooter>
