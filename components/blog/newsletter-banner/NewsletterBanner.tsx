@@ -10,8 +10,8 @@ const NewsletterBanner = () => {
           <Image
             src="/svg/leaf.svg"
             alt="yerba mate drink"
-            width={80}
-            height={80}
+            width={50}
+            height={50}
             className={styles.leaf_image}
             priority
           />
