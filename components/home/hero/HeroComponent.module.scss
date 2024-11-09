@@ -1,9 +1,9 @@
 .hero_layout {
   @apply container;
-  @apply flex items-center justify-start relative;
+  @apply flex items-center justify-start relative grow min-h-[70vh];
 
   .hero_description {
-    @apply flex flex-col h-full justify-center gap-y-2 md:gap-y-4 px-2 md:px-0;
+    @apply flex flex-col h-full justify-center gap-y-4 md:gap-y-6 px-2 md:px-0;
   }
 
   .hero_heading {
