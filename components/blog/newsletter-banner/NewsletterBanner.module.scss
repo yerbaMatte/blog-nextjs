@@ -1,0 +1,50 @@
+.newsletter_banner {
+  @apply flex flex-col gap-x-4;
+  @apply rounded-xl grow;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 65%,
+    rgba(0, 0, 0, 1) 65%,
+    rgba(63, 63, 70, 0.4) 90%
+  );
+}
+
+.leaf_container {
+  @apply flex justify-center items-center;
+  @apply m-2;
+}
+
+.leaf_image {
+  @apply h-auto max-w-full rotate-90;
+}
+
+.content {
+  @apply flex grow items-center justify-start gap-x-4;
+}
+
+.title {
+  @apply text-lg leading-4 text-center md:text-2xl font-bold text-foreground;
+}
+
+.description {
+  @apply text-sm font-medium text-white;
+}
+
+[data-theme="light"] {
+  .title {
+    @apply text-background;
+  }
+
+  .leaf_image {
+    @apply invert;
+  }
+
+  .newsletter_banner {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 65%,
+      rgba(255, 255, 255, 1) 65%,
+      rgba(147, 147, 147, 0.477) 100%
+    );
+  }
+}

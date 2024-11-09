@@ -5,6 +5,7 @@ import PostList from "@/components/blog/post_list/PostList";
 import { BlogPostItemList } from "@/types/blog/blogPostTypes";
 import { Divider } from "@nextui-org/react";
 import { useState, useEffect } from "react";
+import NewsletterBanner from "../newsletter-banner/NewsletterBanner";
 
 type BlogSectionProps = {
   blogList: BlogPostItemList[];
@@ -41,10 +42,9 @@ const BlogSection = ({ blogList, tagList }: BlogSectionProps) => {
     );
   };
 
-  console.log(selectedFilters);
-
   return (
     <>
+      <NewsletterBanner />
       <SearchAndBlogFilters
         onSearch={(term) => setSearchTerm(term)}
         value={searchTerm}

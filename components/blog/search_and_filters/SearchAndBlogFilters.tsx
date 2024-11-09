@@ -36,6 +36,7 @@ const SearchAndBlogFilters = ({
           input: ["placeholder:text-sm"],
         }}
       />
+      <p className="my-1 text-md">Choose your filters:</p>
       {tags.map((tag: TagResponseType, index: number) => (
         <Tag
           isFilter

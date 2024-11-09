@@ -1,4 +1,3 @@
-import { Divider } from "@nextui-org/react";
 import { getAllPosts, getAllTags } from "@/lib/api/blogQueries";
 import TitleSection from "@/components/ui/title-section/TitleSection";
 import BlogSection from "@/components/blog/blog_section/BlogSection";
@@ -34,7 +33,6 @@ const BlogPage = async () => {
           <TitleSection className="my-8" title="Blog">
             Latest news, tips, updates, and stories for developers
           </TitleSection>
-          <Divider />
           <BlogSection blogList={posts} tagList={tags} />
         </div>
       </div>

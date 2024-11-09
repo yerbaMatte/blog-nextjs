@@ -1,8 +1,8 @@
-// import { Link as NextUILink, Button, Code } from "@nextui-org/react";
-import { Button, Code } from "@nextui-org/react";
+import { Code } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./HeroComponent.module.scss";
+import NewsletterBanner from "@/components/blog/newsletter-banner/NewsletterBanner";
 
 const HeroComponent = () => {
   return (
@@ -22,48 +22,23 @@ const HeroComponent = () => {
           </h1>
           <p className="py-2 leading-7">
             <span className="font-bold">CODE BREW</span> by{" "}
-            {/* <NextUILink
-              href="/about"
-              className="text-base font-bold p-0"
-              as={Link}
-            > */}
             <Link className="text-primary font-semibold" href="/about">
               @yerbaMatte
             </Link>{" "}
-            {/* </NextUILink>{" "} */} is a spot for devs looking to level up
-            their productivity and get their workflows tight.
+            is a spot for devs looking to level up their productivity and get
+            their workflows tight.
           </p>
           <p className="py-2 leading-7">
             We dive into web dev and software engineering, sharing tips to help
             you code smarter, not harder.
           </p>
         </div>
-        {/* TODO: subscribe/newsletter */}
-        {/* <div className="flex md:w-3/4 lg:w-2/3 gap-x-4">
-          <Input placeholder="Type your email ..." />
-          <Button className="px-8">SUBSCRIBE</Button>
-        </div> */}
-        <div className="flex md:w-3/4 lg:w-2/3 gap-x-4">
-          <Button
-            variant="bordered"
-            className={`${styles.cta_button} ${styles.blog_button}`}
-            as={Link}
-            href="/blog"
-          >
-            Go to Blog
-          </Button>
-          <Button
-            variant="bordered"
-            className={`${styles.cta_button} ${styles.about_button}`}
-            as={Link}
-            href="/about"
-          >
-            About me
-          </Button>
+
+        <div className="md:w-3/4 lg:w-2/3 gap-x-4">
+          <NewsletterBanner />
         </div>
       </div>
       <Image
-        // data-hide-on-theme="dark"
         src={`${process.env.NEXT_PUBLIC_API_URL}/uploads/hero_background_e71bd77857.webp`}
         width={300}
         height={300}

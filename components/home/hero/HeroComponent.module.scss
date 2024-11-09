@@ -3,27 +3,11 @@
   @apply flex items-center justify-start relative;
 
   .hero_description {
-    @apply flex flex-col h-full justify-center gap-y-2 md:gap-y-8 px-2 md:px-0;
+    @apply flex flex-col h-full justify-center gap-y-2 md:gap-y-4 px-2 md:px-0;
   }
 
   .hero_heading {
     @apply max-w-[280px] md:max-w-[350px] text-[40px] md:text-h1 leading-tight my-4;
-  }
-
-  .blog_button {
-    @apply bg-foreground text-background hover:bg-background hover:text-foreground;
-  }
-
-  .about_button {
-    @apply bg-background text-foreground hover:bg-foreground hover:text-background;
-  }
-}
-
-.cta_button {
-  @apply w-full uppercase border-[1px] border-foreground font-medium text-medium my-16 md:my-4;
-
-  @media (min-width: 430px) {
-    @apply w-1/2;
   }
 }
 

@@ -6,3 +6,11 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+[data-theme="light"] {
+  --primary-color: #1c542b;
+}
+
+[data-theme="dark"] {
+  --primary-color: #4caf50;
+}
