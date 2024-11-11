@@ -9,7 +9,7 @@
 }
 
 .verification_wrapper {
-  @apply flex flex-col items-center justify-start h-80;
+  @apply flex flex-col items-center justify-start h-72 md:h-80;
   @apply border-3 border-divider rounded-xl;
   @apply py-12 max-w-[500px] w-full min-w-[280px];
 
