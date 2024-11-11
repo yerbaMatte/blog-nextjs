@@ -1,0 +1,16 @@
+.leaf_image {
+  @apply invert;
+}
+
+[data-theme="light"] {
+  .leaf_image {
+    @apply invert-0;
+  }
+}
+
+.verification_wrapper {
+  @apply flex flex-col items-center justify-start h-60;
+  h2 {
+    @apply text-2xl my-1 md:text-4xl;
+  }
+}

@@ -37,6 +37,8 @@ const ContactForm = ({ className = "" }: ContactFormProps) => {
     reset,
   } = useForm<ContactFormData>({
     resolver: zodResolver(ContactSchema),
+    mode: "onBlur",
+    reValidateMode: "onChange",
   });
 
   const onSubmit = async (data: ContactFormData) => {

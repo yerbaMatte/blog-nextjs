@@ -22,7 +22,7 @@ const SearchAndBlogFilters = ({
   };
 
   return (
-    <div className="my-6">
+    <div className="mb-6">
       <Input
         size="lg"
         label="Search"

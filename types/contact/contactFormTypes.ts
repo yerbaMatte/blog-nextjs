@@ -16,9 +16,10 @@ export type FormFieldProps<T extends FieldValues> = {
   fieldType: "input" | "textarea";
   type: string;
   label?: string;
+  isClearable?: boolean;
   name: Path<T>;
   register: UseFormRegister<T>;
-  error: FieldError | undefined;
+  error?: FieldError | undefined;
   variant?: ValidFieldVariants;
   classNames?: {
     [key: string]: string | string[];

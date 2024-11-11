@@ -12,7 +12,7 @@ const TitleSection = ({
   return (
     <div className={className}>
       <h2 className="text-h2 text-center">{title}</h2>
-      <p className="text-center">{children}</p>
+      <div className="text-center">{children}</div>
     </div>
   );
 };

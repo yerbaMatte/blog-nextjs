@@ -10,6 +10,7 @@ const FormField = <T extends FieldValues>({
   register,
   error,
   variant,
+  isClearable = true,
   classNames,
   className,
 }: FormFieldProps<T>) => {
@@ -34,7 +35,7 @@ const FormField = <T extends FieldValues>({
           type={type}
           label={label}
           {...register(name)}
-          isClearable
+          isClearable={isClearable}
           variant={variant}
           classNames={classNames}
           className={className}

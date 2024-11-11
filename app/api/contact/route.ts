@@ -2,10 +2,6 @@ import { ContactSchema } from "@/types/contact/contactFormSchema";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-const user = process.env.ZOHO_EMAIL;
-const pass = process.env.ZOHO_PASSWORD;
-const privateEmail = process.env.GMAIL_EMAIL;
-
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -29,14 +25,14 @@ export async function POST(request: Request) {
       port: 465,
       secure: true,
       auth: {
-        user,
-        pass,
+        user: process.env.ZOHO_EMAIL,
+        pass: process.env.ZOHO_PASSWORD,
       },
     });
 
     await transporter.sendMail({
-      from: user,
-      to: privateEmail,
+      from: process.env.ZOHO_EMAIL,
+      to: process.env.GMAIL_EMAIL,
       subject: `New message from ${name}: ${subject}`,
       text: `You have a new message from ${name} (${email}): \n\n${message}`,
     });

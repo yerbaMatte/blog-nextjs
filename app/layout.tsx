@@ -11,7 +11,7 @@ import Header from "../components/layout/header/Header";
 import ScrollFix from "./ScrollFix";
 
 export const metadata: Metadata = {
-  title: "Code Brew by yerbaMatte",
+  title: "Code Brew by @yerbaMatte",
   description: "Essential Insights for Software Engineers.",
 };
 
