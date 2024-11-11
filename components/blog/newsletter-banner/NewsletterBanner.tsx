@@ -84,8 +84,9 @@ const NewsletterBanner = () => {
             />
             <Button
               aria-label="Subscribe to newsletter"
-              className="absolute top-0 end-0 h-full bg-primary-500 z-1 !min-w-12 md:!min-w-20 !p-0 !rounded-t-none rounded-l-none"
+              className="absolute top-0 end-0 h-full bg-primary-500 z-10 !min-w-12 md:!min-w-20 !p-0 !rounded-t-none rounded-l-none"
               isLoading={isSubmitting}
+              onClick={handleSubmit(onSubmit)}
             >
               <svg
                 className="w-4 h-4"
