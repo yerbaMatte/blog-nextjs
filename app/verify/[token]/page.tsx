@@ -38,8 +38,8 @@ export default function Page() {
         <Image
           src="/svg/leaf.svg"
           alt="yerba mate drink"
-          width={100}
-          height={100}
+          width={80}
+          height={80}
           className={styles.leaf_image}
           priority
         />
@@ -47,18 +47,20 @@ export default function Page() {
           title="Verify your email"
           className="flex flex-col gap-y-4"
         >
-          {!message && (
-            <Spinner
-              size="lg"
-              label="Getting response from the server ..."
-              classNames={{
-                base: ["flex-row", "gap-x-2 md:gap-x-6"],
-                label: ["text-sm md:text-xl"],
-                circle2: ["text-primary-500"],
-              }}
-            />
-          )}
-          <p className="text-sm md:text-xl">{message}</p>
+          <div className="h-10 flex justify-center items-center">
+            {!message && (
+              <Spinner
+                // size="lg"
+                label="Getting response from the server ..."
+                classNames={{
+                  base: ["flex-row", "gap-x-2 md:gap-x-6"],
+                  label: ["text-sm md:text-xl"],
+                  circle2: ["text-primary-500"],
+                }}
+              />
+            )}
+            <p className="text-sm md:text-xl">{message}</p>
+          </div>
         </TitleSection>
       </div>
     </div>
