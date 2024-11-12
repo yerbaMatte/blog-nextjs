@@ -44,10 +44,12 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       <div className="container mx-auto grow">
         <div className="flex justify-center">
           <div className="w-full max-w-[900px] prose">
-            <h2 className="text-h2 mt-8 mb-2 text-center text-primary-500">
+            <h2 className="mt-8 mb-2 text-center text-primary-500 text-2xl leading-8 font-bold md:text-4xl">
               {title}
             </h2>
-            <p className="mb-8 text-center text-sm">{description}</p>
+            <p className="mb-8 text-center text-sm md:text-base">
+              {description}
+            </p>
             <PostMetadata
               createdAt={formatDate(createdAt)}
               updatedAt={formatDate(updatedAt)}

@@ -23,17 +23,20 @@ const PostMetadata = ({
         isBlogList ? "items-center" : styles.justify_between
       }`}
     >
-      {isPostUpdated ? (
-        <>
-          {isPostUpdated && <time className={styles.time}>{updatedAt}</time>}
-          {isBlogList && (
-            <time className={`${styles.time} line-through`}>{createdAt}</time>
-          )}
-        </>
-      ) : (
-        <time className={styles.time}>{updatedAt}</time>
-      )}
-
+      <div className="flex flex-row gap-x-2">
+        {isPostUpdated ? (
+          <>
+            {isPostUpdated && <time className={styles.time}>{updatedAt}</time>}
+            {isBlogList && (
+              <time className={`${styles.time} line-through decoration-2`}>
+                {createdAt}{" "}
+              </time>
+            )}
+          </>
+        ) : (
+          <time className={styles.time}>{updatedAt}</time>
+        )}
+      </div>
       <div>
         {tags.map((t, i) => (
           <Tag title={t.title} key={i} />
