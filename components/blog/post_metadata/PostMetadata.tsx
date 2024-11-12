@@ -1,5 +1,6 @@
 import styles from "./PostMetadata.module.scss";
 import Tag from "../tag/Tag";
+import { compareCreateAndUpdateDate } from "@/utils/utils";
 
 type PostMetadataType = {
   createdAt: string;
@@ -14,7 +15,7 @@ const PostMetadata = ({
   tags,
   isBlogList = false,
 }: PostMetadataType) => {
-  const isPostUpdated = createdAt !== updatedAt;
+  const isPostUpdated = compareCreateAndUpdateDate(createdAt, updatedAt);
 
   return (
     <div

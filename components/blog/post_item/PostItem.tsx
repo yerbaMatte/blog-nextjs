@@ -2,7 +2,7 @@ import styles from "./PostItem.module.scss";
 import Link from "next/link";
 import { BlogPostItemList } from "@/types/blog/blogPostTypes";
 import PostItemMetadata from "../post_metadata/PostMetadata";
-import { formatDate } from "@/utils/formatDate";
+import { formatDate } from "@/utils/utils";
 
 const PostItem = ({
   title,
