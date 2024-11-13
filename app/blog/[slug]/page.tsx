@@ -26,47 +26,40 @@ export async function generateStaticParams() {
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { slug } = params;
 
-  try {
-    const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getBlogPost(slug)}`,
-      { cache: "no-store" }
-    );
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getBlogPost(slug)}`,
+    { cache: "no-store" }
+  );
 
-    const json: BlogDataResponse = await response.json();
+  const json: BlogDataResponse = await response.json();
 
-    const { data } = json;
+  const { data } = json;
 
-    if (!data || data.length === 0) return notFound();
+  if (!data || data.length === 0) return notFound();
 
-    const blogData = data[0].content;
-    const { title, description, tags, updatedAt, createdAt } = data[0];
+  const blogData = data[0].content;
+  const { title, description, tags, updatedAt, createdAt } = data[0];
 
-    return (
-      <div className="container mx-auto grow">
-        <div className="flex justify-center">
-          <div className="w-full max-w-[900px] prose">
-            <h2 className="mt-8 mb-2 text-center text-primary-500 text-2xl leading-8 font-bold md:text-4xl">
-              {title}
-            </h2>
-            <p className="mb-8 text-center text-sm md:text-base">
-              {description}
-            </p>
-            <PostMetadata
-              createdAt={formatDate(createdAt)}
-              updatedAt={formatDate(updatedAt)}
-              tags={tags}
-            />
-            {blogData.map((c: FeatureComponent, i: number) => (
-              <CustomRenderer item={c} key={i} />
-            ))}
-          </div>
+  return (
+    <div className="container mx-auto grow">
+      <div className="flex justify-center">
+        <div className="w-full max-w-[900px] prose">
+          <h2 className="mt-8 mb-2 text-center text-primary-500 text-2xl leading-8 font-bold md:text-4xl">
+            {title}
+          </h2>
+          <p className="mb-8 text-center text-sm md:text-base">{description}</p>
+          <PostMetadata
+            createdAt={formatDate(createdAt)}
+            updatedAt={formatDate(updatedAt)}
+            tags={tags}
+          />
+          {blogData.map((c: FeatureComponent, i: number) => (
+            <CustomRenderer item={c} key={i} />
+          ))}
         </div>
       </div>
-    );
-  } catch (error) {
-    console.error("Error fetching blog post:", error);
-    return notFound();
-  }
+    </div>
+  );
 };
 
 export default BlogPostPage;
