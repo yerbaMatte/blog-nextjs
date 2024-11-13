@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: "Code Brew by @yerbaMatte",
   description: "Essential Insights for Software Engineers.",
   openGraph: {
-    title: "Welcome to Code Brew!",
+    title: "Code Brew by @yerbaMatte!",
     description:
       "A new newsletter packed with insights, resources, and coding tips for developers.",
     url: "https://www.blog.yerbamatte.com",
