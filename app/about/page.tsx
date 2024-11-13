@@ -6,7 +6,7 @@ const AboutPage = () => {
   return (
     <div className="flex flex-col items-center w-full grow max-w-[900px]">
       <TitleSection title="About" className="my-8">
-        Hey there! 👋🏽 I&apos;m your host, Miłosz - a Polish software engineer
+        Hey there! 👋🏽 I&apos;m your host, Miłosz - a Polish software developer
       </TitleSection>
       <Divider />
       <div className="container flex flex-col items-center justify-center md:flex-row md:gap-x-8 lg:gap-x-16 mt-2 px-0 grow">
@@ -30,13 +30,16 @@ const AboutPage = () => {
           <p className="py-2 text-justify">
             I previously served as an Imagery Intelligence Officer in the Polish
             Army and graduated from the Military University of Technology in
-            2020. During my service, I contributed to developing a frontend app
-            for my unit.
+            2020. During my service, I contributed to developing a front-end
+            application for my unit as part of a project with NATO, requiring
+            security clearances to handle NATO Secret confidential information.
           </p>
           <p className="py-2 text-justify">
-            In my free time, I enjoy working with Python, DevOps, automation,
-            and VPS. Outside the digital world, I love staying active through
-            travel and sports.
+            Outside of front-end development, I also work with Python in a
+            commercial setting. I&apos;m passionate about Linux and run a
+            Proxmox server at home with several virtual machines. This lets me
+            dive into server management, networking, and virtualization,
+            expanding my skills across different tech areas.
           </p>
         </div>
       </div>
