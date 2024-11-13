@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Open_Sans } from "next/font/google";
 import { Divider } from "@nextui-org/react";
@@ -10,27 +10,27 @@ const Footer = dynamic(() => import("../components/layout/footer/Footer"));
 import Header from "../components/layout/header/Header";
 import ScrollFix from "./ScrollFix";
 
-export const metadata: Metadata = {
-  title: "Code Brew by @yerbaMatte",
-  description: "Essential Insights for Software Engineers.",
-  // metadataBase: new URL("https://blog.yerbamatte.com"),
-  // authors: [{ name: "Seb", url: "https://github.com/yerbaMatte" }],
-  // openGraph: {
-  //   title: "Code Brew by @yerbaMatte!",
-  //   description:
-  //     "A new newsletter packed with insights, resources, and coding tips for developers.",
-  //   url: "https://www.blog.yerbamatte.com",
-  //   images: [
-  //     {
-  //       url: "/images/preview.png",
-  //       width: 1200,
-  //       height: 630,
-  //       alt: "Full-page preview of Code Brew",
-  //     },
-  //   ],
-  //   type: "website",
-  // },
-};
+// export const metadata: Metadata = {
+//   title: "Code Brew by @yerbaMatte",
+//   description: "Essential Insights for Software Engineers.",
+//   metadataBase: new URL("https://blog.yerbamatte.com"),
+//   authors: [{ name: "Seb", url: "https://github.com/yerbaMatte" }],
+//   openGraph: {
+//     title: "Code Brew by @yerbaMatte!",
+//     description:
+//       "A new newsletter packed with insights, resources, and coding tips for developers.",
+//     url: "https://www.blog.yerbamatte.com",
+//     images: [
+//       {
+//         url: "/images/preview.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "Full-page preview of Code Brew",
+//       },
+//     ],
+//     type: "website",
+//   },
+// };
 
 const openSans = Open_Sans({
   weight: ["400", "600", "700"],
