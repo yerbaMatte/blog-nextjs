@@ -10,7 +10,7 @@ const Footer = dynamic(() => import("../components/layout/footer/Footer"));
 import Header from "../components/layout/header/Header";
 import ScrollFix from "./ScrollFix";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Your Page Title",
   description: "A description of your page",
   metadataBase: new URL("https://blog.yerbamatte.com"),
