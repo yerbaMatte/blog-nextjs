@@ -14,7 +14,9 @@ export const metadata: Metadata = {
   title: "Code Brew by @yerbaMatte",
   description: "Essential Insights for Software Engineers.",
   metadataBase: new URL("https://blog.yerbamatte.com"),
-  authors: [{ name: "Seb", url: "https://github.com/yerbaMatte" }],
+  authors: [
+    { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
+  ],
   openGraph: {
     title: "Code Brew by @yerbaMatte!",
     description:
