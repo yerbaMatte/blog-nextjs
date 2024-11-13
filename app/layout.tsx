@@ -11,20 +11,23 @@ import Header from "../components/layout/header/Header";
 import ScrollFix from "./ScrollFix";
 
 export const metadata: Metadata = {
-  title: "Your Page Title",
-  description: "A description of your page",
+  title: "Code Brew by @yerbaMatte",
+  description: "Essential Insights for Software Engineers.",
   metadataBase: new URL("https://blog.yerbamatte.com"),
   openGraph: {
+    title: "Code Brew by @yerbaMatte!",
+    description:
+      "A new newsletter packed with insights, resources, and coding tips for developers.",
+    url: "https://www.blog.yerbamatte.com",
     images: [
       {
-        url: "/images/preview.jpg",
+        url: "/images/preview.png",
         width: 1200,
         height: 630,
+        alt: "Full-page preview of Code Brew",
       },
     ],
-  },
-  twitter: {
-    images: ["/images/preview.jpg"],
+    type: "website",
   },
 };
 
