@@ -13,13 +13,13 @@ export const CustomRenderer = ({ item }: { item: FeatureComponent }) => {
       const { url: imgPath } = item.image;
 
       return (
-        <div className="w-full aspect-video relative">
+        <div className="w-full h-32 md:h-52 relative">
           <Image
             alt="image"
-            src={`http://localhost:1337${imgPath}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}${imgPath}`}
             fill
             quality={100}
-            className="object-contain"
+            className="object-cover"
           />
         </div>
       );
