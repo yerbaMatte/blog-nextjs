@@ -13,6 +13,21 @@ import ScrollFix from "./ScrollFix";
 export const metadata: Metadata = {
   title: "Code Brew by @yerbaMatte",
   description: "Essential Insights for Software Engineers.",
+  openGraph: {
+    title: "Welcome to Code Brew!",
+    description:
+      "A new newsletter packed with insights, resources, and coding tips for developers.",
+    url: "https://www.blog.yerbamatte.com",
+    images: [
+      {
+        url: "/images/preview.webp",
+        width: 1200,
+        height: 630,
+        alt: "Full-page preview of Code Brew",
+      },
+    ],
+    type: "website",
+  },
 };
 
 const openSans = Open_Sans({
