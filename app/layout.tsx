@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://www.blog.yerbamatte.com",
     images: [
       {
-        url: "/images/preview.webp",
+        url: "/images/preview.png",
         width: 1200,
         height: 630,
         alt: "Full-page preview of Code Brew",
