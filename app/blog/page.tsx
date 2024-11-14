@@ -31,6 +31,30 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  keywords: [
+    "software engineering",
+    "coding tips",
+    "developer insights",
+    "programming resources",
+    "web development",
+    "newsletter for developers",
+    "technology news",
+    "developer tools",
+    "full-stack development",
+    "JavaScript",
+    "ReactJS tutorials",
+    "Next.js guide",
+    "web performance optimization",
+    "CSS best practices",
+    "API design",
+    "cloud computing",
+    "DevOps",
+    "backend programming",
+    "machine learning for developers",
+    "developer productivity",
+    "coding interview tips",
+    "code quality",
+  ],
 };
 
 const BlogPage = async () => {

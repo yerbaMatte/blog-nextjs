@@ -38,6 +38,17 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   icons: { icon: "/favicon.ico" },
+  keywords: [
+    "software engineering",
+    "coding tips",
+    "developer insights",
+    "programming resources",
+    "web development",
+    "newsletter for developers",
+    "Code Brew",
+    "technology news",
+    "developer tools",
+  ],
 };
 
 const openSans = Open_Sans({
