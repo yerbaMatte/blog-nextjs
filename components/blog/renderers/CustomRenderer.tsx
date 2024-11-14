@@ -1,6 +1,7 @@
 import { BlocksRenderer } from "@strapi/blocks-react-renderer";
 import { Code } from "@/components/blog/renderers/Code";
 import { FeatureComponent } from "@/types/blog/featurePostTypes";
+import styles from "./CustomRenderer.module.scss";
 import Image from "next/image";
 
 export const CustomRenderer = ({ item }: { item: FeatureComponent }) => {
@@ -8,7 +9,11 @@ export const CustomRenderer = ({ item }: { item: FeatureComponent }) => {
 
   switch (__component) {
     case "features.richarea":
-      return <BlocksRenderer content={item.content} />;
+      return (
+        <div className={styles.custom_render}>
+          <BlocksRenderer content={item.content} />
+        </div>
+      );
     case "features.image":
       const { url: imgPath } = item.image;
 
