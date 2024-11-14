@@ -1,6 +1,33 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { Divider } from "@nextui-org/react";
 import TitleSection from "@/components/ui/title-section/TitleSection";
+
+export const metadata: Metadata = {
+  title: "About me",
+  description: "Hey there! I'm your host, Miłosz - a Polish software developer",
+  metadataBase: new URL("https://blog.yerbamatte.com"),
+  authors: [
+    { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
+  ],
+  openGraph: {
+    title: "About",
+    description:
+      "Hey there! I'm your host, Miłosz - a Polish software developer.",
+    url: "https://www.blog.yerbamatte.com/about",
+    images: [
+      {
+        url: "/images/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Full-page preview of Code Brew",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+    siteName: "Code Brew",
+  },
+};
 
 const AboutPage = () => {
   return (

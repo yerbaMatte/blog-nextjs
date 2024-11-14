@@ -11,14 +11,17 @@ import Header from "../components/layout/header/Header";
 import ScrollFix from "./ScrollFix";
 
 export const metadata: Metadata = {
-  title: "Code Brew by @yerbaMatte",
+  title: {
+    template: "%s | Code Brew",
+    default: "Code Brew",
+  },
   description: "Essential Insights for Software Engineers.",
   metadataBase: new URL("https://blog.yerbamatte.com"),
   authors: [
     { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
   ],
   openGraph: {
-    title: "Code Brew by @yerbaMatte!",
+    title: "Code Brew",
     description:
       "A new newsletter packed with insights, resources, and coding tips for developers.",
     url: "https://www.blog.yerbamatte.com",
@@ -31,7 +34,10 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
+    siteName: "Code Brew",
+    locale: "en_US",
   },
+  icons: { icon: "/favicon.ico" },
 };
 
 const openSans = Open_Sans({

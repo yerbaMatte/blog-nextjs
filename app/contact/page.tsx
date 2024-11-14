@@ -1,7 +1,37 @@
 import { Divider, Link } from "@nextui-org/react";
-
+import type { Metadata } from "next";
 import TitleSection from "@/components/ui/title-section/TitleSection";
 import ContactForm from "@/components/contact/contact_form/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Get in touch with Miłosz Lewandowski, a software developer passionate about web development, programming, and tech. Reach out for collaborations, inquiries, or just to chat!",
+  metadataBase: new URL("https://blog.yerbamatte.com"),
+  authors: [
+    { name: "Miłosz Lewandowski", url: "https://github.com/yerbamatte" },
+  ],
+  openGraph: {
+    title: "Contact",
+    description:
+      "Get in touch with Miłosz Lewandowski, a software developer passionate about web development, programming, and tech. Reach out for collaborations, inquiries, or just to chat!",
+    url: "https://www.blog.yerbamatte.com/contact",
+    images: [
+      {
+        url: "/images/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Contact page preview",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+    siteName: "Code Brew",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 const ContactPage = () => {
   return (
