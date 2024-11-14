@@ -134,7 +134,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
         <li className="h-6">
           <NextUILink
             isExternal
-            href="http://discordapp.com/users/1028667497672609894"
+            href="https://discordapp.com/users/1028667497672609894"
           >
             <Image
               src="/svg/discord.svg"
