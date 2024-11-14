@@ -1,4 +1,4 @@
-User-agent: facebookexternalhit
+User-agent: *
 Allow: /
 
 Sitemap: https://blog.yerbamatte.com/sitemap.xml
