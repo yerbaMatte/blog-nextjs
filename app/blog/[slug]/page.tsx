@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Code Brew",
     },
     alternates: {
-      canonical: `/blog/${slug}`,
+      canonical: slug,
     },
   };
 }
