@@ -1,2 +1,5 @@
 User-agent: facebookexternalhit
 Allow: /
+
+Sitemap: https://blog.yerbamatte.com/sitemap.xml
+
