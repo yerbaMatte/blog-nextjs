@@ -2,4 +2,8 @@
   code {
     @apply bg-primary-500 text-background;
   }
+
+  a {
+    @apply text-background bg-primary-500;
+  }
 }

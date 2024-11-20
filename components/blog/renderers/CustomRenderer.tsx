@@ -32,7 +32,7 @@ export const CustomRenderer = ({ item }: { item: FeatureComponent }) => {
           alt="image"
           src={`${process.env.NEXT_PUBLIC_API_URL}${item.image.url}`}
           width={500}
-          className="w-full"
+          className="w-full m-0"
           height={500}
           quality={100}
         />
