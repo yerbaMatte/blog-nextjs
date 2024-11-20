@@ -14,19 +14,28 @@ export const CustomRenderer = ({ item }: { item: FeatureComponent }) => {
           <BlocksRenderer content={item.content} />
         </div>
       );
-    case "features.image":
-      const { url: imgPath } = item.image;
-
+    case "features.poster":
       return (
         <div className="w-full h-32 md:h-52 relative">
           <Image
             alt="image"
-            src={`${process.env.NEXT_PUBLIC_API_URL}${imgPath}`}
+            src={`${process.env.NEXT_PUBLIC_API_URL}${item.image.url}`}
             fill
             quality={100}
             className="object-cover"
           />
         </div>
+      );
+    case "features.image":
+      return (
+        <Image
+          alt="image"
+          src={`${process.env.NEXT_PUBLIC_API_URL}${item.image.url}`}
+          width={500}
+          className="w-full"
+          height={500}
+          quality={100}
+        />
       );
     case "features.code":
       return <Code code={item.code} />;
