@@ -21,15 +21,3 @@ export const compareCreateAndUpdateDate = (
 
   return dayDifference >= 3;
 };
-
-export const sortPosts = (posts: BlogPostItem[]) => {
-  return posts.sort((a, b) => {
-    if (a.isUpdated && !b.isUpdated) return -1;
-    if (!a.isUpdated && b.isUpdated) return 1;
-
-    const dateA = new Date(a.updatedAt || a.createdAt).getTime();
-    const dateB = new Date(b.updatedAt || b.createdAt).getTime();
-
-    return dateB - dateA;
-  });
-};

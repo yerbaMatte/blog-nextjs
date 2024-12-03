@@ -2,7 +2,6 @@ import { getAllPosts, getAllTags } from "@/lib/api/blogQueries";
 import TitleSection from "@/components/ui/title-section/TitleSection";
 import type { Metadata } from "next";
 import BlogSection from "@/components/blog/blog_section/BlogSection";
-import { sortPosts } from "@/utils/utils";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -79,7 +78,7 @@ const BlogPage = async () => {
   const postsJson = await postsResponse.json();
   const tagsJson = await tagsResponse.json();
 
-  const posts = sortPosts(postsJson.data);
+  const posts = postsJson.data;
 
   const tags = tagsJson.data;
 
