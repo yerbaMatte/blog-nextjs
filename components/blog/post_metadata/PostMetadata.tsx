@@ -33,7 +33,7 @@ const PostMetadata = ({
             )}
           </>
         ) : (
-          <time className={styles.time}>{updatedAt}</time>
+          <time className={styles.time}>{createdAt}</time>
         )}
       </div>
       <div>
