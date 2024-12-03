@@ -1,6 +1,6 @@
 export async function GET() {
   try {
-    const strapiURL = `${process.env.NEXT_PUBLIC_API_URL}/uploads/ENG_Milosz_Lewandowski_Software_Developer_resume_b8c607c26a.pdf`;
+    const strapiURL = `${process.env.NEXT_PUBLIC_API_URL}/uploads/Milosz_Lewandowski_Software_Developer_c4c05f0446.pdf`;
 
     const response = await fetch(strapiURL);
 
