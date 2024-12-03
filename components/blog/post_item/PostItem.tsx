@@ -1,6 +1,6 @@
 import styles from "./PostItem.module.scss";
 import Link from "next/link";
-import { BlogPostItemList } from "@/types/blog/blogPostTypes";
+import { BlogPostItem } from "@/types/blog/blogPostTypes";
 import PostItemMetadata from "../post_metadata/PostMetadata";
 import { formatDate } from "@/utils/utils";
 
@@ -9,9 +9,10 @@ const PostItem = ({
   description,
   tags,
   slug,
+  isUpdated,
   createdAt,
   updatedAt,
-}: BlogPostItemList) => {
+}: BlogPostItem) => {
   return (
     <div className={styles.post_item}>
       <Link href={`/blog/${slug}`}>
@@ -21,6 +22,7 @@ const PostItem = ({
         isBlogList
         createdAt={formatDate(createdAt)}
         updatedAt={formatDate(updatedAt)}
+        isUpdated={isUpdated}
         tags={tags}
       />
       <p>{description}</p>

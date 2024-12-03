@@ -2,19 +2,18 @@
 
 import SearchAndBlogFilters from "@/components/blog/search_and_filters/SearchAndBlogFilters";
 import PostList from "@/components/blog/post_list/PostList";
-import { BlogPostItemList } from "@/types/blog/blogPostTypes";
+import { BlogPostItem } from "@/types/blog/blogPostTypes";
 import { Divider } from "@nextui-org/react";
 import { useState, useEffect } from "react";
 import NewsletterBanner from "../newsletter-banner/NewsletterBanner";
 
 type BlogSectionProps = {
-  blogList: BlogPostItemList[];
+  blogList: BlogPostItem[];
   tagList: { title: string }[];
 };
 
 const BlogSection = ({ blogList, tagList }: BlogSectionProps) => {
-  const [selectedPosts, setSelectedPosts] =
-    useState<BlogPostItemList[]>(blogList);
+  const [selectedPosts, setSelectedPosts] = useState<BlogPostItem[]>(blogList);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
