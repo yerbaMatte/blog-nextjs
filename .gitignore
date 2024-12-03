@@ -40,4 +40,4 @@ yarn-error.log*
 next-env.d.ts
 
 # other
-app/api/resume/route.tsapp/api/resume/route.ts
+app/api/resume/route.ts
