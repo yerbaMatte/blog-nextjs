@@ -1,9 +1,12 @@
-export type BlogPostItemList = {
+import { FeatureComponent } from "./featurePostTypes";
+
+export type BlogPostItem = {
   title: string;
   description: string;
   createdAt: string;
   updatedAt: string;
   documentId?: string;
+  isUpdated?: boolean;
   tags: { title: string }[];
   slug: string;
 };
@@ -17,7 +20,7 @@ export type BlogPost = {
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
-  content: any[];
+  content: FeatureComponent[];
   tags: { title: string }[];
 };
 

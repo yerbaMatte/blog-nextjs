@@ -1,10 +1,10 @@
 import styles from "./PostMetadata.module.scss";
 import Tag from "../tag/Tag";
-import { compareCreateAndUpdateDate } from "@/utils/utils";
 
 type PostMetadataType = {
   createdAt: string;
   updatedAt: string;
+  isUpdated?: boolean;
   tags: { title: string }[];
   isBlogList?: boolean;
 };
@@ -12,11 +12,10 @@ type PostMetadataType = {
 const PostMetadata = ({
   createdAt,
   updatedAt,
+  isUpdated,
   tags,
   isBlogList = false,
 }: PostMetadataType) => {
-  const isPostUpdated = compareCreateAndUpdateDate(createdAt, updatedAt);
-
   return (
     <div
       className={`${styles.time_tags_wrapper} ${
@@ -24,9 +23,9 @@ const PostMetadata = ({
       }`}
     >
       <div className="flex flex-row gap-x-2">
-        {isPostUpdated ? (
+        {isUpdated ? (
           <>
-            {isPostUpdated && <time className={styles.time}>{updatedAt}</time>}
+            {isUpdated && <time className={styles.time}>{updatedAt}</time>}
             {isBlogList && (
               <time className={`${styles.time} line-through decoration-2`}>
                 {createdAt}{" "}
