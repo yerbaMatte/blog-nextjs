@@ -1,7 +1,7 @@
 import qs from "qs";
 
 export const getAllPosts = qs.stringify({
-  sort: ["updatedAt:desc"],
+  sort: ["createdAt:desc"],
   populate: {
     tags: {
       fields: ["title", "id"],

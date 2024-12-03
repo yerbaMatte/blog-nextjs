@@ -24,6 +24,14 @@ export type BlogPost = {
   tags: { title: string }[];
 };
 
+export type PostMetadataType = {
+  createdAt: string;
+  updatedAt: string;
+  isUpdated?: boolean;
+  tags: { title: string }[];
+  isBlogList?: boolean;
+};
+
 export type TagType = {
   title: string;
   amount?: number;

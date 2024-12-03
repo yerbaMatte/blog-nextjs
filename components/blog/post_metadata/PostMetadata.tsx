@@ -1,13 +1,6 @@
 import styles from "./PostMetadata.module.scss";
 import Tag from "../tag/Tag";
-
-type PostMetadataType = {
-  createdAt: string;
-  updatedAt: string;
-  isUpdated?: boolean;
-  tags: { title: string }[];
-  isBlogList?: boolean;
-};
+import { PostMetadataType } from "@/types/blog/blogPostTypes";
 
 const PostMetadata = ({
   createdAt,
