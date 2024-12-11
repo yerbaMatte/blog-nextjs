@@ -1,1 +1,1 @@
-## Next.js blog
+## 🚀 Code Brew frontend
