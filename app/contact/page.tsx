@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Miłosz Lewandowski, a software developer passionate about web development, programming, and tech. Reach out for collaborations, inquiries, or just to chat!",
-  metadataBase: new URL("https://blog.yerbamatte.com"),
+  metadataBase: new URL("https://www.blog.yerbamatte.com"),
   authors: [
     { name: "Miłosz Lewandowski", url: "https://github.com/yerbamatte" },
   ],

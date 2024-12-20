@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: "Code Brew",
   },
   description: "Essential Insights for Software Engineers.",
-  metadataBase: new URL("https://blog.yerbamatte.com"),
+  metadataBase: new URL("https://www.blog.yerbamatte.com"),
   authors: [
     { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
   ],

@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    metadataBase: new URL(`https://blog.yerbamatte.com/blog`),
+    metadataBase: new URL(`https://www.blog.yerbamatte.com/blog`),
     authors: [
       { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
     ],
     openGraph: {
       title,
       description,
-      url: `https://blog.yerbamatte.com/blog/${slug}`,
+      url: `https://www.blog.yerbamatte.com/blog/${slug}`,
       images: [
         {
           url: "/images/preview.png",

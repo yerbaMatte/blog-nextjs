@@ -6,7 +6,7 @@ import TitleSection from "@/components/ui/title-section/TitleSection";
 export const metadata: Metadata = {
   title: "About me",
   description: "Hey there! I'm your host, Miłosz - a Polish software developer",
-  metadataBase: new URL("https://blog.yerbamatte.com"),
+  metadataBase: new URL("https://www.blog.yerbamatte.com"),
   authors: [
     { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
   ],
