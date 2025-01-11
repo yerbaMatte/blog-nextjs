@@ -8,3 +8,9 @@
 * (BE) Strapi CMS: Headless CMS to manage blog content.
 * Nodemailer: Email functionality for contact forms.
 * Newsletter API: Handle newsletter sign-ups/sending email notifications.
+
+
+//: TODO
+1. ci/cd
+2. analytics
+3. 
