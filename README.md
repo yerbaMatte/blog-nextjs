@@ -1,5 +1,6 @@
-## (FE) Code Brew Blog
-
+# 🧉 Code Brew by @yerbaMattte
+Next.js app powered by Strapi CMS.
+## (FE)
 * Next.js: SSR, ISR, SEO.
 * NextUI: with light/dark mode support.
 * Tailwind CSS & SASS.
