@@ -3,11 +3,12 @@ import type { MetadataRoute } from "next";
 
 async function generatePostSitemapData() {
   const postsFetch = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`
+    `${process.env.NEXT_PUBLIC_API_URL}/api/posts?${getAllPosts}`, {cache: 'no-store'}
   );
 
   const postsJson = await postsFetch.json();
   const { data } = postsJson;
+ź
 
   return data.map((post: { slug: string; updatedAt: string }) => ({
     url: `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${post.slug}`,
