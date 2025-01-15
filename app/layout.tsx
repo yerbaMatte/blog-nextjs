@@ -13,9 +13,10 @@ import ScrollFix from "./ScrollFix";
 export const metadata: Metadata = {
   title: {
     template: "%s | Code Brew",
-    default: "Code Brew",
+    default: "Code Brew Blog: Master Software Development & Tech Skills",
   },
-  description: "Essential Insights for Software Engineers.",
+  description:
+    "Discover essential insights for software engineers at Code Brew Blog. Explore expert tips, tutorials, and resources on software development, web design, programming, scripting, DevOps, and cutting-edge technologies. Elevate your skills and stay ahead in the fast-paced world of tech innovation",
   metadataBase: new URL("https://www.blog.yerbamatte.com"),
   authors: [
     { name: "Miłosz Lewandowski", url: "https://github.com/yerbaMatte" },
