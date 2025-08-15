@@ -92,7 +92,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
             className="md:text-lg"
             isExternal
             showAnchorIcon
-            href={`/api/resume`}
+            // href={`/api/resume`}
           >
             Resume
           </NextUILink>
@@ -180,7 +180,7 @@ export default function Header({ footer }: { footer: JSX.Element }) {
               className="text-2xl"
               isExternal
               showAnchorIcon
-              href={`/api/resume`}
+              // href={`/api/resume`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               Resume
